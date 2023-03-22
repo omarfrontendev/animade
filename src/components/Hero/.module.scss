@@ -1,0 +1,8 @@
+.hero__section {
+  max-height: 900px;
+  // min-height: 650px;
+  height: calc(100vh - 97px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,20 @@
+@import "../../styles/variables.scss";
+
+.title {
+  font-size: $ft__36;
+  font-weight: $ft__w__bold;
+  color: $pure__white;
+  font-family: $Poppins__font__family;
+  line-height: 52px;
+  margin-bottom: 20px;
+  width: fit-content;
+  span {
+    background: linear-gradient(90deg, $strong__red 35%, $orange__peel 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &.center {
+    width: 100%;
+    text-align: center;
+  }
+}

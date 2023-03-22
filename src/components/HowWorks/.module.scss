@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.section {
+  background-image: url("../../assets/woks.png");
+  .section__content {
+    position: relative;
+    z-index: 10;
+  }
+  .works__box {
+    margin-top: 34px;
+    // margin-right: 91px;
+    margin-left: auto;
+    width: 725px;
+    max-width: 90%;
+    border-radius: 20px;
+    background-color: $pure__white;
+    padding: 36px 29px;
+    .list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 70px;
+      margin-bottom: 20px;
+      .single__li {
+        display: flex;
+        align-items: center;
+        gap: 44px;
+        > span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+      }
+    }
+    .btn {
+      width: fit-content;
+      margin-left: auto;
+    }
+  }
+}

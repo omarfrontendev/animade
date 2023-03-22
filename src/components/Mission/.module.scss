@@ -1,0 +1,49 @@
+@import "../../styles/variables.scss";
+
+.section {
+  background-image: url("../../assets/star-bg 2.png");
+  min-height: 500px;
+  background-position: 0 -50px !important;
+  .mission__box {
+    max-width: 1087px;
+    margin: 40px auto 0;
+    background-color: $pure__white;
+    color: $dark__blue;
+    border-radius: 20px;
+    padding: 27px 46px 35px;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      font-size: $ft__36;
+      font-weight: $ft__w__bold;
+      font-family: $Poppins__font__family;
+      > span {
+        background: linear-gradient(90deg, #5b21b6 0%, #c70025 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      div > span {
+        background: linear-gradient(90deg, $strong__red 0%, $orange__peel 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    .box__content {
+      display: flex;
+      margin-top: 28px;
+      justify-content: space-between;
+      gap: 40px;
+      p {
+        flex: 1;
+        // font-size: $ft__25;
+        font-size: 22px;
+        font-weight: $ft__w__medium;
+        line-height: 38px;
+        color: #2a2a2a;
+      }
+    }
+  }
+}

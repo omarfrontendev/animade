@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+
+.textarea,
+.input {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 20px;
+  padding: 0 18px;
+  color: $dark__blue;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  textarea,
+  input {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+.textarea {
+  min-height: 300px;
+  width: auto;
+  display: block;
+  padding-top: 24px;
+}

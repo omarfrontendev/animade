@@ -1,0 +1,19 @@
+.hero__slider {
+  position: relative;
+  height: 100%;
+  display: flex;
+  // ====
+  width: 100%;
+  max-width: 1400px;
+  padding: 24px;
+  .slide__container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding-left: 122px;
+    // padding-right: 48px;
+    padding: 0 80px;
+  }
+}
