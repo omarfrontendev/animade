@@ -18,8 +18,28 @@ const Potential = () => {
         <h4 className={styles.slider__title}>Recently Uploaded NFTs</h4>
       </div>
       <Swiper
-        slidesPerView={4}
-        spaceBetween={50}
+        // slidesPerView={4}
+        breakpoints={{
+          // when window width is >= 640px
+          450: {
+            // width: 640,
+            slidesPerView: 2,
+          },
+          // when window width is >= 768px
+          768: {
+            // width: 768,
+            slidesPerView: 3,
+          },
+          992: {
+            // width: 1024,
+            slidesPerView: 4,
+          },
+          1280: {
+            // width: 1280,
+            slidesPerView: 5,
+          },
+        }}
+        spaceBetween={24}
         freeMode={true}
         pagination={{
           clickable: true,
@@ -41,11 +61,31 @@ const Potential = () => {
         </h4>
       </div>
       <Swiper
-        slidesPerView={4}
-        spaceBetween={50}
+        // slidesPerView={4}
+        spaceBetween={24}
         freeMode={true}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          // when window width is >= 640px
+          450: {
+            // width: 640,
+            slidesPerView: 2,
+          },
+          // when window width is >= 768px
+          768: {
+            // width: 768,
+            slidesPerView: 3,
+          },
+          992: {
+            // width: 1024,
+            slidesPerView: 4,
+          },
+          1280: {
+            // width: 1280,
+            slidesPerView: 5,
+          },
         }}
         modules={[FreeMode]}
         className={styles.slider}

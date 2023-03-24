@@ -16,3 +16,4 @@ export { default as Fees } from "./Fees";
 export { default as Mission } from "./Mission";
 export { default as ContactUs } from "./ContactUs";
 export { default as Input } from "./Input";
+export { default as Banner } from "./Banner";

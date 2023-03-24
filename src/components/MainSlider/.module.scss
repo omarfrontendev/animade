@@ -11,9 +11,15 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    // padding-left: 122px;
-    // padding-right: 48px;
-    padding: 0 80px;
+  }
+}
+@media (max-width: 991px) {
+  .hero__slider {
+    padding: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .hero__slider {
+    padding: 18px 18px 40px;
   }
 }

@@ -31,3 +31,17 @@
     }
   }
 }
+@media (max-width: 1399px) {
+  .slider__btns {
+    .btn {
+      width: 25px;
+      height: 25px;
+      border: 2px solid #fff;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .slider__btns {
+    display: none;
+  }
+}

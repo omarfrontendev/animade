@@ -9,4 +9,20 @@
   background-color: $strong__red;
   font-weight: $ft__w__bold;
   text-transform: capitalize;
+  font-size: $ft__25;
+}
+
+@media (max-width: 1399px) {
+  .button {
+    padding: 10px 20px;
+    font-size: $ft__16;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 991px) {
+  .button {
+    padding: 8px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
 }

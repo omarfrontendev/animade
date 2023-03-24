@@ -23,3 +23,14 @@
     font-weight: $ft__w__bold;
   }
 }
+@media (max-width: 1399px) {
+  .footer {
+    padding: 14px 24px;
+    .footer__logo {
+      height: 30px;
+    }
+    > div {
+      font-size: $ft__18;
+    }
+  }
+}

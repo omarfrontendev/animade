@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Banner,
   ContactUs,
   Fees,
   Hero,
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <Banner />
       <HowWorks />
       <Potential />
       <Fees />
