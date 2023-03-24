@@ -1,7 +1,7 @@
 import React from "react";
-import { Home } from "./pages";
+import { Home, SignIn, SignUp, VerifyNumber } from "./pages";
 import { Routes, Route } from "react-router-dom";
-import { MainLayout } from "./layouts";
+import { MainLayout, FluidLayout } from "./layouts";
 
 const App = () => {
   return (
@@ -9,6 +9,12 @@ const App = () => {
       <Route path="/" element={<MainLayout />}>
         <Route path="" element={<Home />} />
       </Route>
+      <Route path="/" element={<FluidLayout />}>
+        <Route path="login" element={<SignIn />} />
+        <Route path="register" element={<SignUp />} />
+        <Route path="vertify-number" element={<VerifyNumber />} />
+      </Route>
+      <Route path="*" element={<h1>Not Found Page...!</h1>} />
     </Routes>
   );
 };
