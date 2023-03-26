@@ -1,0 +1,33 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  label {
+    cursor: pointer;
+  }
+  input {
+    display: none;
+  }
+  .checkbox__label {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+      display: none;
+      flex-shrink: 0;
+      font-size: 24px;
+    }
+  }
+  input:checked {
+    & + .checkbox__label {
+      .icon {
+        display: block;
+      }
+    }
+  }
+}

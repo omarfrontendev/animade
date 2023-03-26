@@ -25,6 +25,7 @@ body {
   background-color: $dark__blue;
   color: $pure__white;
   font-size: $ft__25;
+  // min-height: 200vh;
   // font-size: 20px;
 }
 
@@ -76,6 +77,11 @@ body {
       }
     }
   }
+}
+.section__title {
+  font-size: $ft__25;
+  font-weight: $ft__w__bold;
+  margin-bottom: 30px;
 }
 @media (max-width: 1399px) {
   .container {

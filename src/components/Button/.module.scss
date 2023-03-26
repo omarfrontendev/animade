@@ -10,6 +10,9 @@
   font-weight: $ft__w__bold;
   text-transform: capitalize;
   font-size: $ft__25;
+  &.purple {
+    background-color: $purple;
+  }
 }
 
 @media (max-width: 1399px) {

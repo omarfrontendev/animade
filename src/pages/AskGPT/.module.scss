@@ -1,0 +1,17 @@
+.section__form {
+  display: flex;
+  gap: 40px;
+  > div {
+    flex: 1;
+  }
+  .check__box__list,
+  .check__box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    align-items: flex-end;
+    .check__box__list {
+      flex: 1;
+    }
+  }
+}

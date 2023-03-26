@@ -1,4 +1,4 @@
-import { Icon1, Icon2, Icon3, Icon4, Icon5 } from "../icons";
+import { Icon1, Icon2, Icon3, Icon4, Icon5, Icon8 } from "../icons";
 
 export const WorksData = [
   {
@@ -58,5 +58,28 @@ export const Offers = [
         text: "Of Sales",
       },
     ],
+  },
+];
+
+export const SidebarLinks = [
+  {
+    label: "Create",
+    icon: <Icon8 />,
+  },
+  {
+    label: "Upload",
+    icon: <Icon8 />,
+  },
+  {
+    label: "Track",
+    icon: <Icon8 />,
+  },
+  {
+    label: "Options",
+    icon: <Icon8 />,
+  },
+  {
+    label: "User",
+    icon: <Icon8 />,
   },
 ];

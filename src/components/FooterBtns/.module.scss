@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+.footer {
+  background-color: $dark__blue;
+  position: fixed;
+  bottom: 0;
+  left: 152px;
+  padding: 10px 24px;
+  width: calc(100% - 152px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > div {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    a {
+      font-size: $ft__20;
+    }
+  }
+}

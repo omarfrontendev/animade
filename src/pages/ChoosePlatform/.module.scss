@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.page {
+  > h3 {
+    font-family: $Poppins__font__family;
+    font-size: $ft__32;
+  }
+  .platform__section {
+    max-width: 800px;
+    .platform__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      .platform__title {
+        font-size: $ft__25;
+        font-weight: $ft__w__bold;
+      }
+      .add__new {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 12px 16px;
+        border-radius: 10px;
+        border: 2px solid #fff;
+        .icon {
+          font-size: 34px;
+        }
+      }
+    }
+    .platform__list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    &:first-of-type {
+      margin-bottom: 80px;
+    }
+  }
+}

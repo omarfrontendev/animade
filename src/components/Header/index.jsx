@@ -22,7 +22,7 @@ const Header = () => {
               <Link to="/">How it Works</Link>
             </li>
             <li>
-              <Link to="/">Pricing</Link>
+              <Link to="/pricing">Pricing</Link>
             </li>
             <li>
               <Link to="/login">Log In</Link>
@@ -34,7 +34,7 @@ const Header = () => {
           >
             {openMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
           </button>
-          <Button to="/">Get Started</Button>
+          <Button to="/single-input">Get Started</Button>
         </div>
       </nav>
     </header>
