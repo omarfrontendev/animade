@@ -5,11 +5,13 @@
   align-items: center;
   justify-content: center;
   padding: 15px 29px;
-  border-radius: 15px;
+  border-radius: 8px;
   background-color: $strong__red;
   font-weight: $ft__w__bold;
   text-transform: capitalize;
   font-size: $ft__25;
+  min-width: 150px;
+  max-width: 100%;
   &.purple {
     background-color: $purple;
   }
@@ -20,6 +22,7 @@
     padding: 10px 20px;
     font-size: $ft__16;
     border-radius: 10px;
+    min-width: 100px;
   }
 }
 @media (max-width: 991px) {
@@ -27,5 +30,11 @@
     padding: 8px 18px;
     font-size: 14px;
     border-radius: 8px;
+    min-width: 90px;
+  }
+}
+@media (max-width: 767px) {
+  .button {
+    min-width: auto;
   }
 }

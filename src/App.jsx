@@ -4,6 +4,7 @@ import {
   ChangePassword,
   ChoosePlatform,
   ChooseProdutcs,
+  Drops,
   Home,
   ImageInput,
   ManageAccount,
@@ -49,6 +50,8 @@ const App = () => {
         />
         <Route path="settings/manage-account" element={<ManageAccount />} />
         <Route path="settings/change-password" element={<ChangePassword />} />
+        <Route path="drops" element={<Drops />} />
+        {/* <Route path="drops/:id" element={<h1>drops details</h1>} /> */}
       </Route>
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/privacy" element={<Privacy />} />
