@@ -1,0 +1,43 @@
+@import "../../styles/variables.scss";
+
+.page {
+  .title__header {
+    font-size: $ft__32;
+    font-weight: $ft__w__bold;
+    font-family: $Poppins__font__family;
+    span {
+      font-weight: $ft__w__regular;
+    }
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 840px;
+    max-width: 100%;
+    .input__box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      label {
+        white-space: pre;
+        width: 350px;
+        flex-shrink: 0;
+      }
+    }
+    .submit__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 29px;
+      border-radius: 15px;
+      background-color: $strong__red;
+      font-weight: $ft__w__bold;
+      text-transform: capitalize;
+      width: fit-content;
+      margin-left: auto;
+      font-size: $ft__20;
+    }
+  }
+}

@@ -13,7 +13,7 @@ const Sidebar = () => {
         </Link>
         <div className={styles.list}>
           {SidebarLinks.map((link, i) => (
-            <Link to="/" key={i} className={styles.link}>
+            <Link to={link.to || ""} key={i} className={styles.link}>
               {link.icon}
               {link.label}
             </Link>

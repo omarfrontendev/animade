@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+.page {
+  .title__header {
+    font-size: $ft__32;
+    font-weight: $ft__w__bold;
+    font-family: $Poppins__font__family;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    width: 600px;
+    max-width: 100%;
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: 1;
+      padding: 26px;
+      border-radius: 20px;
+      border: 2px solid #fff;
+      background-color: $dark__blue;
+    }
+  }
+}

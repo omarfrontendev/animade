@@ -1,11 +1,18 @@
 import React from "react";
 import {
   AskGPT,
+  ChangePassword,
   ChoosePlatform,
   ChooseProdutcs,
   Home,
   ImageInput,
+  ManageAccount,
+  Payment,
+  PaymentInformation,
   Pricing,
+  Privacy,
+  Profile,
+  Settings,
   SignIn,
   SignUp,
   SingleInput,
@@ -33,8 +40,18 @@ const App = () => {
       <Route path="" element={<UserLayout noHeader={true} />}>
         <Route path="choose-platform" element={<ChoosePlatform />} />
         <Route path="choose-products" element={<ChooseProdutcs />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="settings/payment" element={<Payment />} />
+        <Route
+          path="settings/payment/information"
+          element={<PaymentInformation />}
+        />
+        <Route path="settings/manage-account" element={<ManageAccount />} />
+        <Route path="settings/change-password" element={<ChangePassword />} />
       </Route>
       <Route path="/pricing" element={<Pricing />} />
+      <Route path="/privacy" element={<Privacy />} />
       <Route path="*" element={<h1>Not Found Page...!</h1>} />
     </Routes>
   );

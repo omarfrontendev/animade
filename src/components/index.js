@@ -26,3 +26,4 @@ export { default as CheckBox } from "./CheckBox";
 export { default as PlanCard } from "./PlanCard";
 export { default as PlatFormCard } from "./PlatFormCard";
 export { default as ProductCard } from "./ProductCard";
+export { default as HeaderSettings } from "./HeaderSettings";

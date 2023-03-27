@@ -1,0 +1,50 @@
+@import "../../styles/variables.scss";
+
+.page {
+  .title__header {
+    font-size: $ft__32;
+    font-weight: $ft__w__bold;
+    font-family: $Poppins__font__family;
+    span {
+      font-weight: $ft__w__regular;
+    }
+  }
+  .content {
+    width: 800px;
+    max-width: 100%;
+    .box {
+      &:first-of-type {
+        margin-bottom: 50px;
+      }
+      .title {
+        font-family: $Poppins__font__family;
+        font-size: $ft__27;
+        font-weight: $ft__w__regular;
+        margin-bottom: 16px;
+      }
+      .inputs__container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        .tow__inputs {
+          display: flex;
+          gap: 24px;
+        }
+      }
+    }
+    .submit__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 29px;
+      border-radius: 15px;
+      background-color: $strong__red;
+      font-weight: $ft__w__bold;
+      text-transform: capitalize;
+      width: fit-content;
+      margin-left: auto;
+      margin-top: 30px;
+      font-size: $ft__20;
+    }
+  }
+}
