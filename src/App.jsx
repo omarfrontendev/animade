@@ -16,6 +16,8 @@ import {
   Settings,
   SignIn,
   SignUp,
+  SingleComplete,
+  SingleDrop,
   SingleInput,
   VerifyNumber,
 } from "./pages";
@@ -51,7 +53,8 @@ const App = () => {
         <Route path="settings/manage-account" element={<ManageAccount />} />
         <Route path="settings/change-password" element={<ChangePassword />} />
         <Route path="drops" element={<Drops />} />
-        {/* <Route path="drops/:id" element={<h1>drops details</h1>} /> */}
+        <Route path="drops/:id" element={<SingleDrop />} />
+        <Route path="drops/complete/:id" element={<SingleComplete />} />
       </Route>
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/privacy" element={<Privacy />} />

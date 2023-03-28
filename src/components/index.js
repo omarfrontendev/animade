@@ -27,3 +27,5 @@ export { default as PlanCard } from "./PlanCard";
 export { default as PlatFormCard } from "./PlatFormCard";
 export { default as ProductCard } from "./ProductCard";
 export { default as HeaderSettings } from "./HeaderSettings";
+export { default as Accordions } from "./Accordions";
+export { default as Modal } from "./Modal";

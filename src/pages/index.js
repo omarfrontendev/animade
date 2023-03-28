@@ -16,3 +16,5 @@ export { default as PaymentInformation } from "./PaymentInformation";
 export { default as ManageAccount } from "./ManageAccount";
 export { default as ChangePassword } from "./ChangePassword";
 export { default as Drops } from "./Drops";
+export { default as SingleDrop } from "./SingleDrop";
+export { default as SingleComplete } from "./SingleComplete";
