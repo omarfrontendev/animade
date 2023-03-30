@@ -5,6 +5,7 @@ import {
   ChoosePlatform,
   ChooseProdutcs,
   Drops,
+  Financial,
   Home,
   ImageInput,
   ManageAccount,
@@ -55,6 +56,7 @@ const App = () => {
         <Route path="drops" element={<Drops />} />
         <Route path="drops/:id" element={<SingleDrop />} />
         <Route path="drops/complete/:id" element={<SingleComplete />} />
+        <Route path="financial" element={<Financial />} />
       </Route>
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/privacy" element={<Privacy />} />

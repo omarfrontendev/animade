@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+.cell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  min-width: 170px;
+  border-right: 1px solid #c4c4c4;
+  min-height: 100px;
+  font-size: $ft__20;
+  font-weight: $ft__w__bold;
+  gap: 10px;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  &.noborder {
+    border-right: none;
+  }
+}

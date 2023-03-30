@@ -63,7 +63,6 @@ const Accordions = ({ item, type }) => {
                 {type !== "complete" && (
                   <>
                     <span className={styles.cell}>
-                      {" "}
                       {product.brand.map((b, i) => (
                         <span key={i}>{b}</span>
                       ))}

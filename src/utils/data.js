@@ -9,6 +9,7 @@ import {
   LegalIcon,
   ManageIcon,
   PaymentIcon,
+  UserIcon,
 } from "../icons";
 
 export const WorksData = [
@@ -92,7 +93,7 @@ export const SidebarLinks = [
   },
   {
     label: "User",
-    icon: <Icon8 />,
+    icon: <UserIcon />,
     to: "/profile",
   },
 ];

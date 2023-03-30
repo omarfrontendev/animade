@@ -15,4 +15,117 @@
       }
     }
   }
+  .content {
+    .accordion__row {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+      width: 100%;
+    }
+    .accordion__body {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+      width: 100%;
+      padding: 24px 0 0;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 62px;
+        height: 100%;
+        width: 4px;
+        background-color: #fff;
+        z-index: -1;
+      }
+    }
+    .base__info {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      gap: 10px;
+      .image {
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        overflow: hidden;
+        display: block;
+        margin-right: 10px;
+        border: 2px solid #fff;
+      }
+    }
+
+    .barnd {
+      position: relative;
+      font-weight: $ft__w__regular;
+      &.box__barnd {
+        width: 70px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -25px;
+          transform: translateY(-50%);
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background-color: #00a959;
+        }
+      }
+    }
+    a,
+    button {
+      width: 150px;
+    }
+    a,
+    button {
+      font-weight: $ft__w__regular;
+      width: 100%;
+      background-color: $strong__red;
+      text-align: center;
+      text-align: center;
+      height: 50px;
+      border-radius: 15px;
+      max-width: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.gray {
+        background-color: #6f6f6f;
+      }
+      &.purple {
+        background-color: #7b63ab;
+      }
+      &.green {
+        background-color: #00a959;
+      }
+    }
+    .drop__icon {
+      cursor: pointer;
+      padding: 0 20px;
+      height: 70px;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  button {
+    flex: 1;
+    border-radius: 15px;
+  }
 }
