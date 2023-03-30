@@ -7,7 +7,7 @@ import {
   Input,
   SwitchButton,
 } from "../../components";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import styles from "./.module.scss";
 
 const NTF = () => {
@@ -58,6 +58,57 @@ const NTF = () => {
             </div>
             <SwitchButton setState={setExtraLink} state={extraLink} />
           </div>
+          {/* ====== */}
+          <div className={`${styles.input} ${styles.center}`}>
+            <label>Collection</label>
+            <select>
+              <option>Choose Collection</option>
+              <option>tow</option>
+              <option>three</option>
+            </select>
+          </div>
+          {/* ======= */}
+          <div className={`${styles.input} ${styles.center}`}>
+            <label>Properties</label>
+            <Input type="text" placeholder="Character Type" />
+            <Input type="text" placeholder="Character Name" />
+          </div>
+          <div className={`${styles.input} ${styles.center}`}>
+            <label>Levels</label>
+            <div className={styles.select__level}>
+              <div className={styles.level}>
+                <Input type="text" placeholder="Name" />
+              </div>
+              <div className={styles.level}>
+                <span className={styles.item}>Value</span>
+                <input className={styles.item} type="number" placeholder="3" />
+                <span className={styles.item}>of</span>
+                <span className={styles.item}>5</span>
+              </div>
+              <button className={styles.close}>
+                <AiOutlineClose />
+              </button>
+            </div>
+          </div>
+          {/* ====== */}
+          <div className={`${styles.input} ${styles.center}`}>
+            <label>Stats</label>
+            <div className={styles.select__level}>
+              <div className={styles.level}>
+                <Input type="text" placeholder="Name" />
+              </div>
+              <div className={styles.level}>
+                <span className={styles.item}>Value</span>
+                <input className={styles.item} type="number" placeholder="3" />
+                <span className={styles.item}>of</span>
+                <span className={styles.item}>5</span>
+              </div>
+              <button className={styles.close}>
+                <AiOutlineClose />
+              </button>
+            </div>
+          </div>
+          {/* ====== */}
           <div className={styles.toggle__btn}>
             <div className={styles.title}>
               <h5>Unlockable Content</h5>
@@ -85,7 +136,7 @@ const NTF = () => {
             </div>
             <Input type="number" placeholder="10" />
           </div>
-          <div className={styles.input} style={{ alignItems: "center" }}>
+          <div className={`${styles.input} ${styles.center}`}>
             <label>Blockchain</label>
             <select>
               <option>Ethereum</option>

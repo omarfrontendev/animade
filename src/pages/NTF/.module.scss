@@ -55,10 +55,14 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-bottom: 10px;
+    margin: 30px 0;
     gap: 24px;
+    &.center {
+      align-items: center;
+    }
     textarea {
       width: 100%;
+      margin-bottom: 10px;
     }
     label {
       width: 200px;
@@ -74,10 +78,51 @@
       border-radius: 20px;
       font-size: $ft__20;
     }
+    .select__level {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+      .level {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        color: $dark__blue;
+        flex: 1;
+        overflow: hidden;
+        background-color: $pure__white;
+        .item {
+          background-color: $pure__white;
+          text-align: center;
+          width: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 18px;
+          height: 60px;
+          &:not(:last-child) {
+            border-right: 1px solid #ccc;
+          }
+        }
+      }
+      .close {
+        background-color: $pure__white;
+        border-radius: 20px;
+        color: $dark__blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        padding: 0 18px;
+        height: 60px;
+        font-size: 18px;
+      }
+    }
   }
   .end__p {
     text-align: right;
     font-size: $ft__20;
+    margin-top: -25px;
     span {
       font-weight: $ft__w__bold;
       color: $strong__red;
