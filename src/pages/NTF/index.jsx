@@ -72,6 +72,9 @@ const NTF = () => {
             <label>Properties</label>
             <Input type="text" placeholder="Character Type" />
             <Input type="text" placeholder="Character Name" />
+            <button className={styles.close}>
+              <AiOutlineClose />
+            </button>
           </div>
           <div className={`${styles.input} ${styles.center}`}>
             <label>Levels</label>

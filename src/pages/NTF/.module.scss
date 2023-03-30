@@ -105,19 +105,19 @@
           }
         }
       }
-      .close {
-        background-color: $pure__white;
-        border-radius: 20px;
-        color: $dark__blue;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 60px;
-        padding: 0 18px;
-        height: 60px;
-        font-size: 18px;
-      }
     }
+  }
+  .close {
+    background-color: $pure__white;
+    border-radius: 20px;
+    color: $dark__blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding: 0 18px;
+    height: 60px;
+    font-size: 18px;
   }
   .end__p {
     text-align: right;
