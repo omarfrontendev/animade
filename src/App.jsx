@@ -9,6 +9,7 @@ import {
   Home,
   ImageInput,
   ManageAccount,
+  NTF,
   Payment,
   PaymentInformation,
   Pricing,
@@ -57,6 +58,7 @@ const App = () => {
         <Route path="drops/:id" element={<SingleDrop />} />
         <Route path="drops/complete/:id" element={<SingleComplete />} />
         <Route path="financial" element={<Financial />} />
+        <Route path="ntf" element={<NTF />} />
       </Route>
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/privacy" element={<Privacy />} />

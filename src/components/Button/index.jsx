@@ -7,7 +7,11 @@ const Button = ({ children, to, color, type }) => {
     return (
       <button
         className={`${styles.button} ${
-          color === "purple" ? styles.purple : ""
+          color === "purple"
+            ? styles.purple
+            : color === "gray"
+            ? styles.gray
+            : ""
         }`}
       >
         {children}
@@ -16,7 +20,9 @@ const Button = ({ children, to, color, type }) => {
   return (
     <Link
       to={to || ""}
-      className={`${styles.button} ${color === "purple" ? styles.purple : ""}`}
+      className={`${styles.button} ${
+        color === "purple" ? styles.purple : color === "gray" ? styles.gray : ""
+      }`}
     >
       {children}
     </Link>

@@ -19,3 +19,4 @@ export { default as Drops } from "./Drops";
 export { default as SingleDrop } from "./SingleDrop";
 export { default as SingleComplete } from "./SingleComplete";
 export { default as Financial } from "./Financial";
+export { default as NTF } from "./NTF";

@@ -31,3 +31,5 @@ export { default as Accordions } from "./Accordions";
 export { default as Accordion } from "./Accordion";
 export { default as Cell } from "./Cell";
 export { default as Modal } from "./Modal";
+export { default as BaseForm } from "./BaseForm";
+export { default as SwitchButton } from "./SwitchButton";
