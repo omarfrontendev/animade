@@ -119,3 +119,48 @@
     }
   }
 }
+@media (max-width: 575px) {
+  .page {
+    .page__content {
+      .form {
+        .inputs__group {
+          .first__inputs {
+            flex-direction: column;
+            gap: 24px;
+          }
+        }
+        .code__container {
+          position: relative;
+          flex-wrap: wrap;
+          gap: 30px;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: gray;
+            width: 14px;
+            height: 3px;
+            border-radius: 50px;
+          }
+          .code__inputs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            input {
+              flex: 1;
+              height: 50px;
+              width: 35px;
+              border-radius: 5px;
+              background-color: $pure__white;
+              color: $dark__blue;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

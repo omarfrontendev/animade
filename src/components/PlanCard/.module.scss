@@ -93,3 +93,55 @@
     }
   }
 }
+@media (max-width: 1199px) {
+  .plan {
+    .card {
+      padding: 16px;
+      &.pro {
+        border-color: $pure__white;
+      }
+      .title {
+        font-size: $ft__22;
+        padding-bottom: 10px;
+        margin-bottom: 8px;
+      }
+      .subtitle {
+        font-size: $ft__16;
+        height: 56px;
+        padding: 0 4px;
+      }
+      .pro__designs {
+        font-size: $ft__22;
+        margin: 10px auto 6px;
+      }
+      .designs {
+        font-size: $ft__22;
+        margin: 10px auto 0;
+      }
+      .monthly {
+        font-size: 20px;
+      }
+      .extra {
+        font-size: 16;
+        margin-bottom: 8px;
+      }
+      .price {
+        font-size: 24px;
+      }
+    }
+    .choose__btn {
+      gap: 6px;
+      padding: 12px 0px;
+      border-radius: 12px;
+      font-size: $ft__18;
+      margin-top: 16px;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .plan {
+    width: 375px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
