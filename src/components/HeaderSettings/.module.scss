@@ -54,6 +54,7 @@
     .nav {
       flex-wrap: wrap;
       gap: 10px;
+      flex-direction: column-reverse;
       .header__links {
         width: fit-content;
         justify-content: flex-end;
@@ -66,3 +67,10 @@
     }
   }
 }
+// @media (max-width: 575px) {
+//   .header {
+//     .nav {
+//       flex-direction: column-reverse;
+//     }
+//   }
+// }
