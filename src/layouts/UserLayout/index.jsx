@@ -13,17 +13,33 @@ const UserLayout = ({ noHeader }) => {
             <nav className={styles.list}>
               <NavLink
                 to="/single-input"
-                className={`${styles.link} ${styles.active}`}
+                // className={`${styles.link} ${({ isActive }) =>
+                //   isActive ? "active" : ""}`}
+
+                className={`link ${styles.link} ${({ isActive }) =>
+                  isActive ? "active" : ""}`}
               >
                 <span>Single Input</span>
               </NavLink>
-              <NavLink to="/" className={`${styles.link}`}>
+              <NavLink
+                to="/"
+                className={`link ${styles.link} ${({ isActive }) =>
+                  isActive ? "active" : ""}`}
+              >
                 <span> List Input</span>
               </NavLink>
-              <NavLink to="/image-input" className={`${styles.link}`}>
-                <span> List Input</span>
+              <NavLink
+                to="/image-input"
+                className={`link ${styles.link} ${({ isActive }) =>
+                  isActive ? "active" : ""}`}
+              >
+                <span>Image Input</span>
               </NavLink>
-              <NavLink to="/ask-ai" className={`${styles.link}`}>
+              <NavLink
+                to="/ask-ai"
+                className={`link ${styles.link} ${({ isActive }) =>
+                  isActive ? "active" : ""}`}
+              >
                 <span>Ask AI</span>
               </NavLink>
             </nav>

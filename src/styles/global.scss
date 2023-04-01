@@ -114,6 +114,32 @@ body {
     max-width: 100%;
   }
 }
+.link {
+  display: block;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  font-size: $ft__25;
+  font-weight: $ft__w__bold;
+  &.active {
+    span {
+      background: linear-gradient(90deg, $strong__red 35%, $orange__peel 75%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -10px;
+      height: 100%;
+      width: 4px;
+      border-radius: 40px;
+      background-color: $orange__peel;
+      transition: 0.3s ease-in-out;
+      background: linear-gradient(360deg, $strong__red 35%, $orange__peel 75%);
+    }
+  }
+}
 @media (max-width: 1399px) {
   .container {
     padding: 0 60px;
@@ -148,6 +174,9 @@ body {
 @media (max-width: 767px) {
   .container {
     padding: 0 18px;
+  }
+  .section__title {
+    font-size: $ft__18;
   }
   .hero__slider {
     .swiper-pagination {

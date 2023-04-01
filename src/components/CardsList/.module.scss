@@ -10,3 +10,15 @@
     gap: 20px;
   }
 }
+@media (max-width: 767px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 450px) {
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+}

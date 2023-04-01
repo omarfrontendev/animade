@@ -86,7 +86,37 @@
 @media (max-width: 991px) {
   .layout {
     .main__content {
-      padding: 24px 24px 95px;
+      padding: 30px 30px 95px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .layout {
+    .main__content {
+      .header {
+        .list {
+          gap: 24px;
+          .link {
+            font-size: $ft__16;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .layout {
+    .main__content {
+      padding: 18px 18px 40px;
+      .header {
+        .list {
+          gap: 18px;
+          flex-wrap: wrap;
+          .link {
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
 }

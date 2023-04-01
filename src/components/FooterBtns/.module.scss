@@ -20,5 +20,11 @@
   .footer {
     left: 0;
     width: 100%;
+    padding: 10px 30px;
+  }
+}
+@media (max-width: 575px) {
+  .footer {
+    padding: 10px 18px;
   }
 }
