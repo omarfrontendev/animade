@@ -1,14 +1,6 @@
 @import "../../styles/variables.scss";
 
 .page {
-  .title__header {
-    font-size: $ft__32;
-    font-weight: $ft__w__bold;
-    font-family: $Poppins__font__family;
-    span {
-      font-weight: $ft__w__regular;
-    }
-  }
   .form {
     display: flex;
     flex-direction: column;
@@ -21,23 +13,54 @@
       justify-content: space-between;
       gap: 20px;
       label {
+        font-size: $ft__25;
+        font-weight: $ft__w__bold;
         white-space: pre;
         width: 350px;
         flex-shrink: 0;
       }
     }
-    .submit__btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 29px;
-      border-radius: 15px;
-      background-color: $strong__red;
-      font-weight: $ft__w__bold;
-      text-transform: capitalize;
-      width: fit-content;
+    button {
       margin-left: auto;
-      font-size: $ft__20;
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .page {
+    .form {
+      .input__box {
+        label {
+          font-size: $ft__20;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .page {
+    .form {
+      width: 100%;
+      .input__box {
+        label {
+          width: 225px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .page {
+    .form {
+      width: 100%;
+      .input__box {
+        flex-direction: column;
+        gap: 6px;
+        label {
+          text-align: left;
+          width: 100%;
+          font-size: 18px;
+        }
+      }
     }
   }
 }

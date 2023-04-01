@@ -2,12 +2,17 @@ import React from "react";
 import { IoIosAdd } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { HeaderSettings, PlatFormCard } from "../../components";
-import styles from "./.module.scss";
+import { IoIosArrowBack } from "react-icons/io";
+import titleClasses from "../Settings/.module.scss";
+import styles from "../ChoosePlatform/.module.scss";
 
 const ManageAccount = () => {
   const title = (
-    <h5 className={styles.title__header}>
-      <span>Settings</span> - Manage Accounts
+    <h5 className={titleClasses.title__header}>
+      <span>
+        <Link to="/settings">Settings</Link>
+      </span>
+      <IoIosArrowBack /> Manage Accounts
     </h5>
   );
   return (

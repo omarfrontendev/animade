@@ -3,13 +3,16 @@
   .nav {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    gap: 20px;
     .header__links {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       font-size: 24px;
+      white-space: pre;
+      margin-left: auto;
       span {
         flex: 1;
         text-align: right;
@@ -41,6 +44,23 @@
         font-size: 16px;
         span {
           padding: 8px 14px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .header {
+    .nav {
+      flex-wrap: wrap;
+      gap: 10px;
+      .header__links {
+        width: fit-content;
+        justify-content: flex-end;
+        // order: -1;
+        span {
+          width: fit-content;
+          flex: none;
         }
       }
     }

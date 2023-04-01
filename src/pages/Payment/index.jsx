@@ -1,12 +1,18 @@
 import React from "react";
 import { Button, HeaderSettings } from "../../components";
 import { PaymentIcon } from "../../icons";
+import { Link } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
+import titleClasses from "../Settings/.module.scss";
 import styles from "./.module.scss";
 
 const Payment = () => {
   const title = (
-    <h5 className={styles.title__header}>
-      <span>Settings</span> - Payment & Billing
+    <h5 className={titleClasses.title__header}>
+      <span>
+        <Link to="/settings">Settings </Link>
+      </span>
+      <IoIosArrowBack /> Payment & Billing
     </h5>
   );
 

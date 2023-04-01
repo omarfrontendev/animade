@@ -1,12 +1,22 @@
 import React from "react";
-import { HeaderSettings, Input } from "../../components";
+import { Button, HeaderSettings, Input } from "../../components";
+import { IoIosArrowBack } from "react-icons/io";
+import { Link } from "react-router-dom";
+import titleClasses from "../Settings/.module.scss";
 import styles from "./.module.scss";
 
 const PaymentInformation = () => {
   const title = (
-    <h5 className={styles.title__header}>
-      <span>Settings</span> - <span>Payment & Billing </span> - Replace Payment
-      Information
+    <h5 className={titleClasses.title__header}>
+      <span>
+        <Link to="/settings">Settings</Link>
+      </span>
+      <IoIosArrowBack />
+      <span>
+        <Link to="/settings/payment">Payment & Billing</Link>
+      </span>
+      <IoIosArrowBack />
+      Replace Payment Information
     </h5>
   );
 
@@ -37,9 +47,10 @@ const PaymentInformation = () => {
               </div>
             </div>
           </div>
-          <button type="submit" className={styles.submit__btn}>
+          <Button type="button">Update & Replace</Button>
+          {/* <button type="submit" className={styles.submit__btn}>
             Update & Replace
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

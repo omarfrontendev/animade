@@ -1,11 +1,17 @@
 import React from "react";
-import { HeaderSettings, Input } from "../../components";
+import { Button, HeaderSettings, Input } from "../../components";
+import { Link } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
+import titleClasses from "../Settings/.module.scss";
 import styles from "./.module.scss";
 
 const ChangePassword = () => {
   const title = (
-    <h5 className={styles.title__header}>
-      <span>Settings</span> - Change Password
+    <h5 className={titleClasses.title__header}>
+      <span>
+        <Link to="/settings">Settings</Link>
+      </span>
+      <IoIosArrowBack /> Change Password
     </h5>
   );
   return (
@@ -24,9 +30,10 @@ const ChangePassword = () => {
           <label>Confirm New Password</label>
           <Input type="password" placeholder="Confirm New Password" />
         </div>
-        <button type="submit" className={styles.submit__btn}>
+        {/* <button type="submit" className={styles.submit__btn}>
           Change Password
-        </button>
+        </button> */}
+        <Button type="button">Change Password</Button>
       </form>
     </div>
   );

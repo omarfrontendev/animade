@@ -1,14 +1,6 @@
 @import "../../styles/variables.scss";
 
 .page {
-  .title__header {
-    font-size: $ft__32;
-    font-weight: $ft__w__bold;
-    font-family: $Poppins__font__family;
-    span {
-      font-weight: $ft__w__regular;
-    }
-  }
   .content {
     width: 800px;
     max-width: 100%;
@@ -32,19 +24,46 @@
         }
       }
     }
-    .submit__btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 29px;
-      border-radius: 15px;
-      background-color: $strong__red;
-      font-weight: $ft__w__bold;
-      text-transform: capitalize;
-      width: fit-content;
+    button {
       margin-left: auto;
       margin-top: 30px;
-      font-size: $ft__20;
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .page {
+    .content {
+      .box {
+        .title {
+          font-size: $ft__25;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .page {
+    .content {
+      width: 100%;
+      .box {
+        .title {
+          font-size: $ft__20;
+          margin-bottom: 14px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .page {
+    .content {
+      .box {
+        .inputs__container {
+          .tow__inputs {
+            flex-direction: column;
+          }
+        }
+      }
     }
   }
 }

@@ -1,11 +1,6 @@
 @import "../../styles/variables.scss";
 
 .page {
-  .title__header {
-    font-size: $ft__32;
-    font-weight: $ft__w__bold;
-    font-family: $Poppins__font__family;
-  }
   .content {
     display: flex;
     flex-direction: column;
@@ -25,11 +20,23 @@
     }
   }
 }
+.title__header {
+  font-size: $ft__32;
+  font-weight: $ft__w__bold;
+  font-family: $Poppins__font__family;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  span {
+    font-weight: $ft__w__regular;
+  }
+  svg {
+    transform: rotate(180deg);
+  }
+}
 @media (max-width: 1399px) {
   .page {
-    .title__header {
-      font-size: $ft__27;
-    }
     .content {
       .link {
         font-size: $ft__20;
@@ -45,12 +52,12 @@
       }
     }
   }
+  .title__header {
+    font-size: $ft__27;
+  }
 }
 @media (max-width: 767px) {
   .page {
-    .title__header {
-      font-size: $ft__22;
-    }
     .content {
       width: 100%;
       .link {
@@ -64,5 +71,14 @@
         }
       }
     }
+  }
+  .title__header {
+    font-size: $ft__22;
+  }
+}
+@media (max-width: 575px) {
+  .title__header {
+    font-size: $ft__18;
+    gap: 5px;
   }
 }
