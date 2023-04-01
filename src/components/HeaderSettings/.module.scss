@@ -1,5 +1,5 @@
 .header {
-  margin-bottom: 60px;
+  margin-bottom: 32px;
   .nav {
     width: 100%;
     display: flex;
@@ -9,6 +9,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      font-size: 24px;
       span {
         flex: 1;
         text-align: right;
@@ -16,6 +17,30 @@
         padding: 10px 20px;
         &:first-of-type {
           border-right: 1px solid #fff;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .header {
+    .nav {
+      .header__links {
+        font-size: 20px;
+        span {
+          padding: 8px 14px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    .nav {
+      .header__links {
+        font-size: 16px;
+        span {
+          padding: 8px 14px;
         }
       }
     }
