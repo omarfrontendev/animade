@@ -47,22 +47,19 @@
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
             }
-            &::after {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: -10px;
-              height: 100%;
-              width: 4px;
-              border-radius: 40px;
-              background-color: $orange__peel;
-              transition: 0.3s ease-in-out;
-              background: linear-gradient(
-                360deg,
-                $strong__red 35%,
-                $orange__peel 75%
-              );
-            }
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            height: 20px;
+            width: 4px;
+            transform: translateY(-50%);
+            border-radius: 40px;
+            background-color: $orange__peel;
+            transition: 0.3s ease-in-out;
+            background-color: $pure__white;
           }
         }
       }

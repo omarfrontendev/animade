@@ -121,6 +121,7 @@ body {
   font-size: $ft__25;
   font-weight: $ft__w__bold;
   &.active {
+    // font-weight: 900 !important;
     span {
       background: linear-gradient(90deg, $strong__red 35%, $orange__peel 75%);
       -webkit-background-clip: text;

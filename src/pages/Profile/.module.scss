@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 40px 0;
+    margin: 10px 0 40px;
     .nav {
       width: 100%;
       display: flex;
@@ -31,9 +31,6 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        > a {
-          font-size: $ft__20;
-        }
       }
       .design {
         position: relative;
@@ -56,6 +53,106 @@
             $strong__red 35%,
             $orange__peel 75%
           );
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .page {
+    .header {
+      .nav {
+        .user__details {
+          gap: 32px;
+          font-size: $ft__27;
+          img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+          }
+        }
+        .rocket__box {
+          svg {
+            width: 50px;
+          }
+        }
+        .design {
+          font-size: $ft__20;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .page {
+    .header {
+      .nav {
+        .user__details {
+          gap: 18px;
+          font-size: $ft__25;
+          img {
+            width: 90px;
+            height: 90px;
+          }
+        }
+        .rocket__box {
+          svg {
+            width: 40px;
+          }
+        }
+        .design {
+          font-size: $ft__18;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .page {
+    .header {
+      .nav {
+        flex-wrap: wrap;
+        gap: 40px;
+        row-gap: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .page {
+    .header {
+      .nav {
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        .user__details {
+          font-size: $ft__22;
+          flex-direction: column;
+          img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+          }
+        }
+        .rigth__header {
+          width: 100%;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 330px) {
+  .page {
+    .header {
+      .nav {
+        .rigth__header {
+          flex-direction: column;
         }
       }
     }
