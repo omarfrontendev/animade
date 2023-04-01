@@ -36,3 +36,43 @@
     }
   }
 }
+@media (max-width: 1399px) {
+  .card {
+    padding: 24px 20px 24px 50px;
+    font-size: $ft__20;
+  }
+}
+@media (max-width: 767px) {
+  .card {
+    padding: 18px 18px 18px 32px;
+    gap: 32px;
+    font-size: $ft__16;
+    .items__num,
+    .type {
+      padding-left: 20px;
+      position: relative;
+      &::after {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .card {
+    flex-wrap: wrap;
+    gap: 20px;
+    column-gap: 32px;
+    padding: 18px;
+    > span {
+      flex: 1;
+      white-space: pre;
+      &.name {
+        flex-basis: 100%;
+      }
+      &:not(.name) {
+        flex: none;
+      }
+    }
+  }
+}

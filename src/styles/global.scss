@@ -82,6 +82,10 @@ body {
   font-size: $ft__25;
   font-weight: $ft__w__bold;
   margin-bottom: 30px;
+  &.page__title {
+    font-family: $Poppins__font__family;
+    font-size: $ft__32;
+  }
 }
 .popup {
   position: fixed;
@@ -165,6 +169,9 @@ body {
   .section__title {
     font-size: $ft__20;
     margin-bottom: 24px;
+    &.page__title {
+      font-size: $ft__27;
+    }
   }
 }
 @media (max-width: 991px) {
@@ -178,6 +185,9 @@ body {
   }
   .section__title {
     font-size: $ft__18;
+    &.page__title {
+      font-size: $ft__22;
+    }
   }
   .hero__slider {
     .swiper-pagination {

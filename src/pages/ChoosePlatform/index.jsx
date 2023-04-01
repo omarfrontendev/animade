@@ -8,7 +8,7 @@ const ChoosePlatform = () => {
   return (
     <>
       <div className={styles.page}>
-        <h3 className="section__title">
+        <h3 className="section__title page__title">
           Where would you like to upload these designs?
         </h3>
         <div className={styles.platform__section}>
