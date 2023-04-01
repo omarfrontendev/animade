@@ -3,7 +3,8 @@
 .section__form {
   display: flex;
   gap: 40px;
-  > div {
+  .form {
+    max-width: 600px;
     flex: 1;
   }
   .upload__image {
@@ -18,7 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 500px;
+      width: 300px;
       max-width: 100%;
       height: 230px;
       border: 1px solid #fff;
@@ -28,19 +29,59 @@
       background-color: $dark__blue;
     }
     .label__btn {
+      gap: 10px;
+      width: 300px;
+      max-width: 100%;
       display: flex;
-      background-color: #7b63ab;
-      border-radius: 10px;
-      font-size: 20px;
-      padding: 15px 29px;
-      border-radius: 15px;
-      font-weight: 700;
-      text-transform: capitalize;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      width: 500px;
+      padding: 15px 29px;
+      border-radius: 8px;
+      background-color: $purple;
+      font-weight: $ft__w__bold;
+      text-transform: capitalize;
+      font-size: $ft__25;
+      min-width: 150px;
       max-width: 100%;
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .section__form {
+    .upload__image {
+      .label__btn {
+        padding: 10px 20px;
+        font-size: $ft__16;
+        border-radius: 10px;
+        min-width: 100px;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .section__form {
+    .upload__image {
+      .label__img {
+        width: 200px;
+        .label__btn {
+          width: 200px;
+        }
+      }
+      .label__btn {
+        padding: 8px 18px;
+        font-size: 14px;
+        border-radius: 8px;
+        min-width: 90px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .section__form {
+    .upload__image {
+      .label__btn {
+        min-width: auto;
+      }
     }
   }
 }

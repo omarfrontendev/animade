@@ -10,7 +10,7 @@ const ImageInput = () => {
       <div className={styles.page}>
         <h3 className="section__title">Ask GPT-4 for some help</h3>
         <div className={styles.section__form}>
-          <div>
+          <div className={styles.form}>
             <GenerateForm
               placeholder={
                 "Upload the image and provide a prompt. This is great if you want to edit an image, or create variations. You can even change the art style."

@@ -15,16 +15,16 @@ const UserLayout = ({ noHeader }) => {
                 to="/single-input"
                 className={`${styles.link} ${styles.active}`}
               >
-                Single Input
+                <span>Single Input</span>
               </NavLink>
               <NavLink to="/" className={`${styles.link}`}>
-                List Input
+                <span> List Input</span>
               </NavLink>
               <NavLink to="/image-input" className={`${styles.link}`}>
-                Image Input
+                <span> List Input</span>
               </NavLink>
               <NavLink to="/ask-ai" className={`${styles.link}`}>
-                Ask AI
+                <span>Ask AI</span>
               </NavLink>
             </nav>
           </header>

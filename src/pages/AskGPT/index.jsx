@@ -15,7 +15,7 @@ const AskGPT = () => {
       <div className={styles.page}>
         <h3 className="section__title">Ask GPT-4 for some help</h3>
         <div className={styles.section__form}>
-          <div>
+          <div className={styles.form}>
             <GenerateForm
               type="ai"
               placeholder="What do you want to see? Be specific."

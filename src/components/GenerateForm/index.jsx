@@ -9,7 +9,7 @@ const GenerateForm = ({ type, placeholder }) => {
       <Input type="textarea" placeholder={placeholder} />
       <div className={styles.form__control}>
         <span>Images per prompt</span>
-        <input type="number" defaultValue={0} />
+        <input type="text" defaultValue={0} />
         <Button color="purple" type="button">
           <div className={styles.generat__btn}>
             {type === "ai" ? "Ask Ai" : "Generate"}

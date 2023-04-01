@@ -14,8 +14,11 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    a {
-      font-size: $ft__20;
-    }
+  }
+}
+@media (max-width: 991px) {
+  .footer {
+    left: 0;
+    width: 100%;
   }
 }

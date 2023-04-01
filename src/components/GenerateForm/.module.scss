@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    height: 57px;
+    height: 63px;
     span {
       font-size: $ft__20;
     }
@@ -20,20 +20,38 @@
       background-color: $pure__white;
       width: 60px;
       height: 100%;
-      border-radius: 10px;
+      border-radius: 8px;
       color: $dark__blue;
       text-align: center;
     }
     button {
       flex: 1;
-      border-radius: 10px;
-      font-size: $ft__20;
     }
     .generat__btn {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .form {
+    row-gap: 20px;
+    .form__control {
+      height: 42px;
+      span {
+        font-size: $ft__16;
+      }
+      input {
+        width: 40px;
+      }
+      .generat__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
     }
   }
 }

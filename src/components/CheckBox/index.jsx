@@ -9,7 +9,9 @@ const CheckBox = ({ label, value }) => {
       <label htmlFor={value} className={styles.checkbox__label}>
         <BsCheck className={styles.icon} />
       </label>
-      <label htmlFor={value}>{label}</label>
+      <label htmlFor={value} className={styles.label__text}>
+        {label}
+      </label>
     </div>
   );
 };

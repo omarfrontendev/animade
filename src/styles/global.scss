@@ -135,6 +135,10 @@ body {
       }
     }
   }
+  .section__title {
+    font-size: $ft__20;
+    margin-bottom: 24px;
+  }
 }
 @media (max-width: 991px) {
   .container {
