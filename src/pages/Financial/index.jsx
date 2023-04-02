@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Image from "../../assets/Rectangle 4.png";
 import { IoIosArrowBack } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Accordion, Cell } from "../../components";
 import { BsChevronDown } from "react-icons/bs";
+import titleClasses from "../Settings/.module.scss";
 import styles from "../SingleDrop/.module.scss";
 
 const Financial = () => {
@@ -38,7 +39,7 @@ const Financial = () => {
         <button className={styles.back__btn} onClick={() => navigate(-1)}>
           <IoIosArrowBack />
         </button>
-        <h2 className={styles.title}>
+        <h2 className={titleClasses.title__header}>
           <span>Your Finances (Updated Daily)</span>
         </h2>
       </div>

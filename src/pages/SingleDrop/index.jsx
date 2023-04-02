@@ -44,7 +44,7 @@ const SingleDrop = () => {
             <IoIosArrowBack />
           </button>
           <h2 className={titleClasses.title__header}>
-            <Link to="/drops">Drops</Link> <IoIosArrowBack />{" "}
+            <Link to="/drops">Drops</Link> <IoIosArrowBack />
             <span>World of Giants</span>
           </h2>
         </div>
