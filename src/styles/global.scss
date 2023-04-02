@@ -97,6 +97,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100000;
   .overlay {
     position: absolute;
     top: 0;
@@ -107,8 +108,11 @@ body {
     opacity: 0.8;
   }
   .card {
-    z-index: 10000;
+    z-index: 100000;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .popup__card {
     background-color: #2c3135;
@@ -179,6 +183,16 @@ body {
   .container {
     padding: 0 24px;
   }
+  .popup {
+    .card {
+      width: 100%;
+    }
+    .popup__card {
+      min-width: auto;
+      width: 95%;
+      padding: 18px 28px;
+    }
+  }
 }
 @media (max-width: 767px) {
   .container {
@@ -202,6 +216,11 @@ body {
           height: 20px;
         }
       }
+    }
+  }
+  .popup {
+    .popup__card {
+      padding: 20px;
     }
   }
 }

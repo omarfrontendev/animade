@@ -5,14 +5,15 @@
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-bottom: 20px;
-    .title {
-      font-size: $ft__32;
-      font-weight: $ft__w__regular;
-      font-family: $Poppins__font__family;
-      span {
-        font-weight: $ft__w__bold;
-      }
+    margin-bottom: 32px;
+    .back__btn {
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 40px 20px 0;
+      border-right: 1px solid #ffffff88;
+      margin-right: 24px;
     }
   }
   .content {
@@ -126,6 +127,190 @@
   gap: 100px;
   button {
     flex: 1;
-    border-radius: 15px;
+  }
+}
+@media (max-width: 1399px) {
+  .page {
+    .header {
+      .back__btn {
+        font-size: 30px;
+        padding: 20px 28px 20px 0;
+        margin-right: 12px;
+      }
+    }
+    .content {
+      .accordion__body {
+        &::after {
+          top: -10px;
+          left: 52px;
+        }
+      }
+      .base__info {
+        .image {
+          width: 80px;
+          height: 80px;
+          border-radius: 14px;
+          flex-shrink: 0;
+        }
+      }
+      a,
+      button {
+        border-radius: 12px;
+      }
+      .drop__icon {
+        width: 80px;
+      }
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .page {
+    .content {
+      .accordion__body {
+        &::after {
+          top: -10px;
+          left: 46px;
+        }
+      }
+      .base__info {
+        .image {
+          height: 80px;
+          border-radius: 14px;
+          flex-shrink: 0;
+          margin: 0;
+        }
+      }
+      a,
+      button {
+        border-radius: 8px;
+        width: 100px;
+      }
+      .drop__icon {
+        width: 50px;
+        padding: 0 8px;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .page {
+    .content {
+      .accordion__body {
+        &::after {
+          top: -10px;
+          left: 37px;
+          width: 2px;
+          transform: translateX(100%);
+        }
+      }
+      .base__info {
+        .image {
+          height: 70px;
+          width: 70px;
+          border-radius: 10px;
+          border: 1px solid;
+        }
+      }
+      a,
+      button {
+        border-radius: 8px;
+        min-width: auto;
+        width: 100%;
+        white-space: pre;
+        font-size: 12px;
+        height: 40px;
+      }
+      .drop__icon {
+        width: 30px;
+        padding: 0 8px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .page {
+    .content {
+      .accordion__body {
+        &::after {
+          top: -10px;
+          left: 37px;
+          width: 2px;
+          transform: translateX(100%);
+        }
+      }
+      .base__info {
+        font-size: 12px;
+        .image {
+          height: 70px;
+          width: 70px;
+          border-radius: 10px;
+          border: 1px solid;
+        }
+      }
+      a,
+      button {
+        border-radius: 8px;
+        min-width: auto;
+        width: 100%;
+        white-space: pre;
+        font-size: 12px;
+        height: 40px;
+      }
+      .drop__icon {
+        width: 30px;
+        padding: 0 8px;
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .page {
+    .content {
+      .accordion__body {
+        &::after {
+          display: none;
+        }
+        .accordion__row {
+          padding: 20px 0;
+          background-color: rgb(75 74 74 / 38%);
+          border-radius: 10px;
+          backdrop-filter: blur(6px);
+          margin: 0 auto;
+          max-width: 400px;
+        }
+        .drop__icon {
+          display: none;
+        }
+      }
+      .accordion__row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        position: relative;
+      }
+      .base__info {
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 10px;
+        .image {
+          width: 120px;
+          height: 120px;
+        }
+      }
+      .drop__icon {
+        // display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        background-color: #fff;
+        color: $dark__blue;
+        height: auto;
+        width: auto;
+        font-size: 20px;
+        padding: 4px;
+        border-radius: 4px;
+      }
+    }
   }
 }

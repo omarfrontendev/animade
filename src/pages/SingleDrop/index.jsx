@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Image from "../../assets/Rectangle 4.png";
 import { IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Accordion, Button, Cell, Modal } from "../../components";
 import { BsChevronDown } from "react-icons/bs";
+import titleClasses from "../Settings/.module.scss";
 import styles from "./.module.scss";
 
 const SingleDrop = () => {
@@ -42,8 +43,9 @@ const SingleDrop = () => {
           <button className={styles.back__btn} onClick={() => navigate(-1)}>
             <IoIosArrowBack />
           </button>
-          <h2 className={styles.title}>
-            Drops - <span>World of Giants</span>
+          <h2 className={titleClasses.title__header}>
+            <Link to="/drops">Drops</Link> <IoIosArrowBack />{" "}
+            <span>World of Giants</span>
           </h2>
         </div>
         <div className={styles.content}>

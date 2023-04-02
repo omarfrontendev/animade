@@ -150,6 +150,102 @@
   gap: 100px;
   button {
     flex: 1;
-    border-radius: 15px;
+  }
+}
+@media (max-width: 1399px) {
+  .page {
+    .content {
+      .box {
+        .image {
+          height: 200px;
+        }
+        .name {
+          font-size: $ft__16;
+        }
+        .products {
+          text-align: center;
+          font-size: $ft__16;
+        }
+        .upload {
+          font-size: $ft__16;
+        }
+        .attention {
+          font-size: $ft__16;
+        }
+      }
+      .add__block {
+        height: 200px;
+      }
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .page {
+    .header {
+      margin-bottom: 28px;
+      .title {
+        font-size: $ft__27;
+      }
+      .rigth {
+        font-size: $ft__18;
+        span {
+          padding: 0 15px;
+          gap: 10px;
+          &:last-of-type {
+            padding-right: 0;
+          }
+          svg {
+            height: 50px;
+          }
+        }
+      }
+    }
+    .content {
+      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      .box {
+        .attention,
+        .upload,
+        .products,
+        .name {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .input {
+    label {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .page {
+    .content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@media (max-width: 767px) {
+  .page {
+    .content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .input {
+    gap: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .page {
+    .content {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .input {
+    flex-wrap: wrap;
+  }
+  .btns {
+    gap: 20px;
   }
 }

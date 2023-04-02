@@ -135,7 +135,13 @@ const Drops = () => {
           title="Name your Drop"
           buttons={
             <div className={styles.btns}>
-              <Button type="button">Cancel</Button>
+              <Button
+                onClick={() => setOpenPopup(false)}
+                type="button"
+                color="gray"
+              >
+                Cancel
+              </Button>
               <Button type="button">Create Drop</Button>
             </div>
           }
