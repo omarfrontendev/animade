@@ -80,16 +80,24 @@
     }
   }
 }
+@media (max-width: 1199px) {
+  .layout {
+    .main__content {
+      padding: 20px 20px 95px;
+    }
+  }
+}
 @media (max-width: 991px) {
   .layout {
     .main__content {
-      padding: 30px 30px 95px;
+      padding: 24px 24px 95px;
     }
   }
 }
 @media (max-width: 767px) {
   .layout {
     .main__content {
+      padding: 18px 18px 95px;
       .header {
         .list {
           gap: 24px;
