@@ -43,3 +43,62 @@
     }
   }
 }
+@media (max-width: 1199px) {
+  .form {
+    padding: 18px;
+    margin-bottom: 0;
+    .input {
+      margin-bottom: 20px;
+      label {
+        width: 100px;
+        font-size: 16px;
+      }
+      textarea,
+      input {
+        font-size: 16px !important;
+      }
+    }
+    .submit {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+      margin-left: 120px;
+      button {
+        font-size: 16px;
+      }
+      p {
+        font-size: $ft__16;
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .form {
+    .submit {
+      flex-direction: column;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .form {
+    .input {
+      margin-bottom: 20px;
+      flex-direction: column;
+      align-items: flex-start !important;
+      gap: 10px;
+      flex: 1;
+      width: 100%;
+      textarea,
+      input {
+        flex: 1;
+        flex-basis: 100%;
+        width: auto;
+      }
+    }
+    .submit {
+      gap: 10px;
+      margin-bottom: 20px;
+      margin-left: 0;
+    }
+  }
+}

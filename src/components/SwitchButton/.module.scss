@@ -26,3 +26,20 @@
     background-color: #fff;
   }
 }
+@media (max-width: 1199px) {
+  .button {
+    border-width: 2px;
+    width: 60px;
+    height: 30px;
+    &.active {
+      opacity: 0.4;
+      .bullet {
+        transform: translateX(-30px);
+      }
+    }
+    .bullet {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}

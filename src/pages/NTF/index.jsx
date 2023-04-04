@@ -70,11 +70,13 @@ const NTF = () => {
           {/* ======= */}
           <div className={`${styles.input} ${styles.center}`}>
             <label>Properties</label>
-            <Input type="text" placeholder="Character Type" />
-            <Input type="text" placeholder="Character Name" />
-            <button className={styles.close}>
-              <AiOutlineClose />
-            </button>
+            <div className={`${styles.input__control}`}>
+              <Input type="text" placeholder="Character Type" />
+              <Input type="text" placeholder="Character Name" />
+              <button className={styles.close}>
+                <AiOutlineClose />
+              </button>
+            </div>
           </div>
           <div className={`${styles.input} ${styles.center}`}>
             <label>Levels</label>
