@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import styles from "./.module.scss";
 
 const Button = ({ children, to, color, type, onClick }) => {
-  if (type === "button")
+  if (type === "button" || type === "submit")
     return (
       <button
+        type={type || ""}
         onClick={() => onClick()}
         className={`${styles.button} ${
           color === "purple"
