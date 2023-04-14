@@ -25,6 +25,7 @@ import {
 } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { MainLayout, FluidLayout, UserLayout } from "./layouts";
+import { AuthGuard, LoginGuard } from "./components";
 
 const App = () => {
   return (
@@ -33,34 +34,164 @@ const App = () => {
         <Route path="" element={<Home />} />
       </Route>
       <Route path="/" element={<FluidLayout />}>
-        <Route path="login" element={<SignIn />} />
-        <Route path="register" element={<SignUp />} />
-        <Route path="vertify-number" element={<VerifyNumber />} />
+        <Route
+          path="login"
+          element={
+            <LoginGuard>
+              <SignIn />
+            </LoginGuard>
+          }
+        />
+        <Route
+          path="register"
+          element={
+            <LoginGuard>
+              <SignUp />
+            </LoginGuard>
+          }
+        />
+        <Route
+          path="vertify-number"
+          element={
+            <LoginGuard>
+              <VerifyNumber />
+            </LoginGuard>
+          }
+        />
       </Route>
       <Route path="" element={<UserLayout />}>
-        <Route path="single-input" element={<SingleInput />} />
+        <Route
+          path="single-input"
+          element={
+            <AuthGuard>
+              <SingleInput />
+            </AuthGuard>
+          }
+        />
         <Route path="ask-ai" element={<AskGPT />} />
-        <Route path="image-input" element={<ImageInput />} />
+        <Route
+          path="image-input"
+          element={
+            <AuthGuard>
+              <ImageInput />
+            </AuthGuard>
+          }
+        />
       </Route>
       <Route path="" element={<UserLayout noHeader={true} />}>
-        <Route path="choose-platform" element={<ChoosePlatform />} />
-        <Route path="choose-products" element={<ChooseProdutcs />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="settings/payment" element={<Payment />} />
+        <Route
+          path="choose-platform"
+          element={
+            <AuthGuard>
+              <ChoosePlatform />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="choose-products"
+          element={
+            <AuthGuard>
+              <ChooseProdutcs />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="profile"
+          element={
+            <AuthGuard>
+              <Profile />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="settings"
+          element={
+            <AuthGuard>
+              <Settings />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="settings/payment"
+          element={
+            <AuthGuard>
+              <Payment />
+            </AuthGuard>
+          }
+        />
         <Route
           path="settings/payment/information"
-          element={<PaymentInformation />}
+          element={
+            <AuthGuard>
+              <PaymentInformation />
+            </AuthGuard>
+          }
         />
-        <Route path="settings/manage-account" element={<ManageAccount />} />
-        <Route path="settings/change-password" element={<ChangePassword />} />
-        <Route path="drops" element={<Drops />} />
-        <Route path="drops/:id" element={<SingleDrop />} />
-        <Route path="drops/complete/:id" element={<SingleComplete />} />
-        <Route path="financial" element={<Financial />} />
-        <Route path="ntf" element={<NTF />} />
+        <Route
+          path="settings/manage-account"
+          element={
+            <AuthGuard>
+              <ManageAccount />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="settings/change-password"
+          element={
+            <AuthGuard>
+              <ChangePassword />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="drops"
+          element={
+            <AuthGuard>
+              <Drops />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="drops/:id"
+          element={
+            <AuthGuard>
+              <SingleDrop />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="drops/complete/:id"
+          element={
+            <AuthGuard>
+              <SingleComplete />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="financial"
+          element={
+            <AuthGuard>
+              <Financial />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="ntf"
+          element={
+            <AuthGuard>
+              <NTF />
+            </AuthGuard>
+          }
+        />
       </Route>
-      <Route path="/pricing" element={<Pricing />} />
+      <Route
+        path="/pricing"
+        element={
+          <AuthGuard>
+            <Pricing />
+          </AuthGuard>
+        }
+      />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="*" element={<h1>Not Found Page...!</h1>} />
     </Routes>

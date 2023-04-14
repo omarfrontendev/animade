@@ -33,3 +33,5 @@ export { default as Cell } from "./Cell";
 export { default as Modal } from "./Modal";
 export { default as BaseForm } from "./BaseForm";
 export { default as SwitchButton } from "./SwitchButton";
+export { default as AuthGuard } from "./AuthGuard";
+export { default as LoginGuard } from "./LoginGuard";

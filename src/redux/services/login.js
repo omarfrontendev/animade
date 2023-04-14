@@ -1,17 +1,17 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-// import api from "../../api";
 
-export const register = createAsyncThunk(
-  "auth/register",
+export const login = createAsyncThunk(
+  "auth/login",
   async (formData, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_SERVER_API_URL}/register/`,
+        `${process.env.REACT_APP_SERVER_API_URL}/login/`,
         JSON.stringify({
+          // username: "omar__12",
+          // password: "123456789",
           username: formData.username,
-          email: formData.email,
           password: formData.password,
         }),
         {

@@ -54,6 +54,11 @@
         width: 100%;
         margin-top: 24px;
         gap: 18px;
+        transition: 0.3s ease-in-out;
+        &:disabled {
+          cursor: not-allowed;
+          background-color: gray;
+        }
         &.trouble__btn {
           background-color: #4d595d;
         }
@@ -117,6 +122,29 @@
       font-size: $ft__16;
       text-align: center;
     }
+  }
+  .error__message {
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffcccc;
+    border-radius: 4px;
+    color: #c70025;
+    margin: 10px auto;
+    font-weight: 500;
+  }
+}
+.loader {
+  width: 25px;
+  height: 25px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  border-right-color: #ffffff3b;
+  animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+  to {
+    rotate: 360deg;
   }
 }
 @media (max-width: 575px) {

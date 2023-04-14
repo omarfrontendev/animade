@@ -34,8 +34,8 @@ const SingleInput = () => {
           },
         }
       );
-      const responseData = await res.json();
-      console.log(responseData);
+      // const responseData = await res.json();
+      console.log(res);
     } catch (error) {
       console.log(error);
     }

@@ -10,11 +10,23 @@
   height: 60px;
   display: flex;
   align-items: center;
+  position: relative;
   textarea,
   input {
     width: 100%;
     font-size: 20px;
     font-weight: 500;
+  }
+  &.error {
+    margin-bottom: 10px;
+  }
+  .error__message {
+    position: absolute;
+    bottom: -21px;
+    font-size: 13px;
+    text-align: center;
+    left: 10px;
+    color: red;
   }
 }
 .textarea {
