@@ -9,8 +9,6 @@ export const login = createAsyncThunk(
       const res = await axios.post(
         `${process.env.REACT_APP_SERVER_API_URL}/login/`,
         JSON.stringify({
-          // username: "omar__12",
-          // password: "123456789",
           username: formData.username,
           password: formData.password,
         }),

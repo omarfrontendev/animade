@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./.module.scss";
 
-const Input = ({ type, placeholder, onChange, error }) => {
+const Input = ({ type, placeholder, onChange, error, required }) => {
   if (type === "textarea")
     return (
       // <div className={styles.textarea}>
@@ -9,6 +9,7 @@ const Input = ({ type, placeholder, onChange, error }) => {
         className={styles.textarea}
         placeholder={placeholder}
         onChange={(e) => onChange(e)}
+        required={required}
       />
       // </div>
     );
@@ -18,6 +19,7 @@ const Input = ({ type, placeholder, onChange, error }) => {
         type={type}
         placeholder={placeholder}
         onChange={(e) => onChange(e)}
+        required={required}
       />
       {error && <p className={styles.error__message}>{error}</p>}
     </div>

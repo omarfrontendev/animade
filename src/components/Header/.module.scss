@@ -37,6 +37,12 @@
   .toggle__menu {
     display: none;
   }
+  .logout__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+  }
 }
 @media (max-width: 1399px) {
   .header {

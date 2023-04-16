@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./.module.scss";
 
-const Button = ({ children, to, color, type, onClick }) => {
+const Button = ({ children, to, color, type, onClick, loading }) => {
   if (type === "button" || type === "submit")
     return (
       <button
         type={type || ""}
-        onClick={() => onClick()}
+        onClick={onClick ? () => onClick() : () => {}}
+        disabled={loading}
         className={`${styles.button} ${
           color === "purple"
             ? styles.purple
@@ -16,7 +17,7 @@ const Button = ({ children, to, color, type, onClick }) => {
             : ""
         }`}
       >
-        {children}
+        {loading ? <span className="spinner"></span> : children}
       </button>
     );
   return (

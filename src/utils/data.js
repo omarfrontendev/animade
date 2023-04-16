@@ -91,11 +91,11 @@ export const SidebarLinks = [
     icon: <Icon8 />,
     to: "/settings",
   },
-  {
-    label: "User",
-    icon: <UserIcon />,
-    to: "/profile",
-  },
+  // {
+  //   label: "User",
+  //   icon: <UserIcon />,
+  //   to: "/profile",
+  // },
 ];
 
 export const privacyBoxprags = [

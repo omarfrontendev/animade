@@ -5,8 +5,8 @@ import styles from "./.module.scss";
 const CardsList = ({ list, isSelected }) => {
   return (
     <div className={styles.list}>
-      {list.map((_, i) => (
-        <OutputCard key={i} isSelected={isSelected} />
+      {list.map((image, i) => (
+        <OutputCard key={i} image={image} isSelected={isSelected} />
       ))}
     </div>
   );

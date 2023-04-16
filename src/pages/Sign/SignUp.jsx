@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/services/register";
 import { toast } from "react-toastify";
 import styles from "./.module.scss";
+import { getUser } from "../../redux/services/getUser";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const SignUp = () => {
               e.preventDefault();
               await dispatch(register(data)).then((res) => {
                 if (!res?.error) {
-                  toast.success("Success Register!", {
+                  toast.success("Success Register !", {
                     position: toast.POSITION.TOP_RIGHT,
                     className: "toast__fiy",
                   });
@@ -52,6 +53,7 @@ const SignUp = () => {
                   });
                 }
               });
+              dispatch(getUser());
             }}
           >
             <div className={styles.inputs__group}>

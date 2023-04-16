@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/services/login";
 import styles from "./.module.scss";
 import { toast } from "react-toastify";
+import { getUser } from "../../redux/services/getUser";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const SignIn = () => {
     e.preventDefault();
     await dispatch(login(data)).then((res) => {
       if (!res?.error) {
-        toast.success("Success Login!", {
+        toast.success("Success Login !", {
           position: toast.POSITION.TOP_RIGHT,
           className: "toast__fiy",
         });
@@ -38,6 +39,7 @@ const SignIn = () => {
         });
       }
     });
+    dispatch(getUser());
   };
 
   return (
