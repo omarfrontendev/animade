@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/services/login";
 import styles from "./.module.scss";
-import { toast } from "react-toastify";
 import { getUser } from "../../redux/services/getUser";
 
 const SignIn = () => {
@@ -25,22 +24,19 @@ const SignIn = () => {
     e.preventDefault();
     await dispatch(login(data)).then((res) => {
       if (!res?.error) {
-        toast.success("Success Login !", {
-          position: toast.POSITION.TOP_RIGHT,
-          className: "toast__fiy",
-        });
         setTimeout(() => {
           navigate("/single-input");
         }, 1000);
-      } else {
-        toast.error(res?.error.message, {
-          position: toast.POSITION.TOP_RIGHT,
-          className: "toast__fiy",
-        });
       }
     });
     dispatch(getUser());
   };
+
+  let validate = true;
+
+  if (data?.username && data?.password?.length > 6) {
+    validate = false;
+  }
 
   return (
     <div className={styles.page}>
@@ -60,18 +56,20 @@ const SignIn = () => {
                 placeholder="Your Name"
                 onChange={(e) => inputChangeHandler(e, "username")}
                 error={error?.response?.data?.username}
-              />
-              <Input
-                placeholder="Email Address"
-                type="email"
-                onChange={(e) => inputChangeHandler(e, "email")}
-                error={error?.response?.data?.email}
+                value={data.username || ""}
+                validation={(e) => e.length > 0}
+                errorMsg="This Field Can't Be Empty"
+                required={true}
               />
               <Input
                 placeholder="Password"
                 type="password"
                 onChange={(e) => inputChangeHandler(e, "password")}
+                value={data.password || ""}
                 error={error?.response?.data?.password}
+                validation={(e) => e.length > 6}
+                errorMsg="Password Must be More Than 6 character"
+                required={true}
               />
             </div>
             <button type="button" className={styles.forget__pass}>
@@ -82,7 +80,7 @@ const SignIn = () => {
               className={`${styles.login__btn} ${
                 isLoaing ? styles.loading : ""
               }`}
-              disabled={isLoaing}
+              disabled={isLoaing || validate}
             >
               {isLoaing ? (
                 <span className={styles.loader}></span>

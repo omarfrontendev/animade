@@ -1,8 +1,29 @@
-import React from "react";
-import { Input, Title } from "../";
+import React, { useState } from "react";
+import { Button, Input, Title } from "../";
 import styles from "./.module.scss";
 
 const ContactUs = () => {
+  const [data, setData] = useState({});
+
+  const inputChangeHandler = (e, id) => {
+    setData({
+      ...data,
+      [id]: e.target.value,
+    });
+  };
+
+  let validate = true;
+
+  if (
+    data?.name?.length > 0 &&
+    data?.email.includes("@" && ".") &&
+    data?.email.slice(-1) !== "." &&
+    data?.number.length > 4 &&
+    data?.message.length > 0
+  ) {
+    validate = false;
+  }
+
   return (
     <section className={`section ${styles.section}`}>
       <div className="container">
@@ -15,14 +36,46 @@ const ContactUs = () => {
           className={styles.contact__form}
         >
           <div className={styles.first__inputs}>
-            <Input type="text" placeholder="Your Name" />
-            <Input type="number" placeholder="Phone number" />
+            <Input
+              type="text"
+              placeholder="Your Name"
+              onChange={(e) => inputChangeHandler(e, "name")}
+              validation={(e) => e.length > 0}
+              errorMsg="This Field Can't Be Empty"
+              required={true}
+              value={data?.name || ""}
+            />
+            <Input
+              type="number"
+              placeholder="Phone number"
+              onChange={(e) => inputChangeHandler(e, "number")}
+              validation={(e) => e.length > 4}
+              errorMsg="Number Must be More Than (4 ch)"
+              required={true}
+              value={data?.number || ""}
+            />
           </div>
-          <Input type="email" placeholder="Email Address" />
-          <Input type="textarea" placeholder="How can we help?" />
-          <button type="submit" className={styles.submit__btn}>
+          <Input
+            placeholder="Email Address"
+            type="email"
+            onChange={(e) => inputChangeHandler(e, "email")}
+            validation={(e) => e.includes("@" && ".") && e.slice(-1) !== "."}
+            errorMsg="Enter in the format:name@example.com"
+            required={true}
+            value={data?.email || ""}
+          />{" "}
+          <Input
+            type="textarea"
+            placeholder="How can we help?"
+            onChange={(e) => inputChangeHandler(e, "message")}
+            validation={(e) => e.length > 0}
+            errorMsg="This Field Can't Be Empty"
+            required={true}
+            value={data?.message || ""}
+          />
+          <Button type="submit" disabled={validate}>
             Send Message
-          </button>
+          </Button>
         </form>
       </div>
     </section>

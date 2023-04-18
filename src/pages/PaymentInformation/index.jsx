@@ -1,9 +1,15 @@
 import React from "react";
-import { Button, HeaderSettings, Input } from "../../components";
+import { Button, CheckoutForm, HeaderSettings, Input } from "../../components";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import titleClasses from "../Settings/.module.scss";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import styles from "./.module.scss";
+
+const stripePromise = loadStripe(
+  "pk_test_51LNF3wCuskqUZKWT5ZQXcSa0c96FP2jFu0ubWGrTlLJbomfuPT9z9edcFa5EFK2PBFhx64xGi7MdzDrRmFGQN0ED00G981buvD"
+);
 
 const PaymentInformation = () => {
   const title = (
@@ -23,7 +29,7 @@ const PaymentInformation = () => {
   return (
     <div className={styles.page}>
       <HeaderSettings title={title} />
-      <div className={styles.content}>
+      {/* <div className={styles.content}>
         <form onSubmit={(e) => e.preventDefault()}>
           <div className={styles.box}>
             <h5 className={styles.title}>Add Card Details</h5>
@@ -48,11 +54,11 @@ const PaymentInformation = () => {
             </div>
           </div>
           <Button type="button">Update & Replace</Button>
-          {/* <button type="submit" className={styles.submit__btn}>
-            Update & Replace
-          </button> */}
         </form>
-      </div>
+      </div> */}
+      <Elements stripe={stripePromise}>
+        <CheckoutForm />
+      </Elements>
     </div>
   );
 };

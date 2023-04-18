@@ -7,7 +7,7 @@ import styles from "./.module.scss";
 const SingleInput = () => {
   const [data, setData] = useState({});
   const dispatch = useDispatch();
-  const { resluts, error, isLoading, isError } = useSelector(
+  const { textToImageResluts, error, isLoading, isError } = useSelector(
     (state) => state.AIResults
   );
 
@@ -27,7 +27,9 @@ const SingleInput = () => {
         />
         {/* <button onClick={generateImages}>Submit</button> */}
         <section className={`section ${styles.section}`}>
-          <h4 className="section__title">Output ({resluts?.length || 0})</h4>
+          <h4 className="section__title">
+            Output ({textToImageResluts?.length || 0})
+          </h4>
           {isLoading ? (
             <span className={`spinner ${styles.loader__spinner}`}></span>
           ) : isError?.status !== "success" ? (
@@ -44,12 +46,12 @@ const SingleInput = () => {
             </>
           ) : error ? (
             <p className="error__msg">Error...!</p>
-          ) : !resluts ? (
+          ) : !textToImageResluts ? (
             <h5>Search For Images</h5>
-          ) : !resluts?.length ? (
+          ) : !textToImageResluts?.length ? (
             <h5>No Results</h5>
           ) : (
-            <CardsList list={resluts || []} />
+            <CardsList list={textToImageResluts || []} />
           )}
         </section>
         <section className={`section ${styles.section}`}>

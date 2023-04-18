@@ -21,6 +21,7 @@ const GenerateForm = ({
     >
       <Input
         type="textarea"
+        value={data?.prompt || ""}
         placeholder={placeholder}
         onChange={(e) => setData({ ...data, prompt: e.target.value })}
         required={true}

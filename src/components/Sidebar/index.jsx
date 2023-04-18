@@ -37,7 +37,7 @@ const Sidebar = () => {
             ))}
             <Link to="/profile" className={styles.link}>
               <UserIcon />
-              {user.username}
+              {user?.username || "User"}
             </Link>
           </div>
         </div>

@@ -4,39 +4,40 @@ import { useNavigate } from "react-router-dom";
 import { plansImage } from "../../assets";
 import styles from "./.module.scss";
 import { IoIosArrowBack } from "react-icons/io";
+import { plans } from "../../utils/data";
 
 const Pricing = () => {
   const navigate = useNavigate();
 
-  const plans = [
-    {
-      title: "Booster",
-      subtitle: "Take your business off the ground",
-      designs: 100,
-      extra: 50,
-      price: 1.99,
-    },
-    {
-      title: "Accelerate",
-      subtitle: "Reach new heights",
-      designs: 850,
-      extra: 800,
-      price: 5.99,
-    },
-    {
-      title: "Turbocharge",
-      subtitle: "Some serious power",
-      designs: 3050,
-      extra: 300,
-      price: 15.99,
-    },
-    {
-      title: "Professional",
-      subtitle: "Unlimited potential",
-      price: 26.99,
-      Professional: true,
-    },
-  ];
+  // const plans = [
+  //   {
+  //     title: "Booster",
+  //     subtitle: "Take your business off the ground",
+  //     designs: 100,
+  //     extra: 50,
+  //     price: 1.99,
+  //   },
+  //   {
+  //     title: "Accelerate",
+  //     subtitle: "Reach new heights",
+  //     designs: 850,
+  //     extra: 800,
+  //     price: 5.99,
+  //   },
+  //   {
+  //     title: "Turbocharge",
+  //     subtitle: "Some serious power",
+  //     designs: 3050,
+  //     extra: 300,
+  //     price: 15.99,
+  //   },
+  //   {
+  //     title: "Professional",
+  //     subtitle: "Unlimited potential",
+  //     price: 26.99,
+  //     Professional: true,
+  //   },
+  // ];
 
   return (
     <div className={styles.page}>
@@ -63,6 +64,8 @@ const Pricing = () => {
                 designs={plan?.designs}
                 image={plansImage[i]}
                 Professional={plan?.Professional}
+                free={plan?.free}
+                link={plan?.href}
               />
             ))}
           </div>

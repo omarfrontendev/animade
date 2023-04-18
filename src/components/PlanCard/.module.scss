@@ -3,7 +3,7 @@
 .plan {
   display: flex;
   flex-direction: column;
-
+  transition: 0.4s linear;
   .card {
     flex: 1;
     display: flex;
@@ -87,9 +87,16 @@
     text-transform: capitalize;
     font-size: $ft__20;
     margin-top: 20px;
-    &.pro {
-      background-color: #fff;
-      color: $dark__blue;
+    transition: 0.2s linear;
+  }
+  &:hover {
+    scale: 1.015555;
+    .card {
+      border-color: $pure__white;
+    }
+    .choose__btn {
+      background-color: $pure__white;
+      color: $strong__red;
     }
   }
 }
