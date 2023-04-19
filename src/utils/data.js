@@ -76,10 +76,12 @@ export const SidebarLinks = [
   {
     label: "Create",
     icon: <Icon8 />,
+    link: "/single-input",
   },
   {
     label: "Upload",
     icon: <Icon8 />,
+    link: "/drops",
   },
   {
     label: "Track",
@@ -88,7 +90,7 @@ export const SidebarLinks = [
   {
     label: "Options",
     icon: <Icon8 />,
-    to: "/settings",
+    link: "/settings",
   },
 ];
 

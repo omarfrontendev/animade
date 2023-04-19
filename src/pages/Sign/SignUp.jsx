@@ -24,8 +24,8 @@ const SignUp = () => {
 
   if (
     data?.username &&
-    !data?.username.includes(" ") &&
-    data?.phonenumber.length > 3 &&
+    !data?.username?.includes(" ") &&
+    data?.phonenumber?.length > 3 &&
     /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(data?.email) &&
     /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
       data?.password
@@ -38,7 +38,6 @@ const SignUp = () => {
   return (
     <div className={styles.page}>
       <div className="container">
-        {/* <button onClick={notify}>Notify!</button> */}
         <div className={styles.page__content}>
           <Title align="center">
             <div className={styles.main__title}>
@@ -122,7 +121,7 @@ const SignUp = () => {
                     e
                   )
                 }
-                errorMsg="password should contain atleast one number and one special character and letter !"
+                errorMsg="password should contain atleast one number, letter, one special character [@$!%*?&]"
                 required={true}
                 value={data?.password || ""}
               />

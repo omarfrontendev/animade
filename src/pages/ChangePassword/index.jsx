@@ -54,9 +54,13 @@ const ChangePassword = () => {
   let validate = true;
 
   if (
-    data?.old_password?.length > 6 &&
-    data?.new_password?.length > 6 &&
-    data?.confirmpassword === data?.new_password
+    /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+      data?.old_password
+    ) &&
+    /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+      data?.new_password
+    ) &&
+    data?.confirmpassword === data.new_password
   ) {
     validate = false;
   }

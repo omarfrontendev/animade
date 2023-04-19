@@ -3,8 +3,11 @@ import { Button, CardsList, FooterBtns } from "../../components";
 import { RocketIcon } from "../../icons";
 import DefaultImage from "../../assets/profile.png";
 import styles from "./.module.scss";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
+  const { user } = useSelector((state) => state.user);
+
   return (
     <>
       <div className={styles.page}>
@@ -16,12 +19,12 @@ const Profile = () => {
                 alt="user__image"
                 className={styles.user__image}
               />
-              Hello, Luca Bertuzzi
+              Hello, {user?.username || "User"}
             </div>
             <div className={styles.rigth__header}>
-              <Button>Upgrade</Button>
+              <Button to="/pricing">Upgrade</Button>
               <div className={styles.rocket__box}>
-                <span className={styles.design}>10 designs</span>
+                <span className={styles.design}>30 designs</span>
                 <RocketIcon />
               </div>
             </div>

@@ -196,9 +196,9 @@ const App = () => {
       <Route
         path="/pricing"
         element={
-          <AuthGuard>
-            <Pricing />
-          </AuthGuard>
+          // <AuthGuard>
+          <Pricing />
+          // </AuthGuard>
         }
       />
       <Route path="/privacy" element={<Privacy />} />

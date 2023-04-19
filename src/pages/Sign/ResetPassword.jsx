@@ -98,8 +98,12 @@ const ResetPassword = () => {
                   }
                   value={data?.password || ""}
                   error={error?.response?.data?.password}
-                  validation={(e) => e.length > 7}
-                  errorMsg="Password Must be More Than 6 character"
+                  validation={(e) =>
+                    /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+                      e
+                    )
+                  }
+                  errorMsg="password should contain atleast one number, letter, one special character [@$!%*?&]"
                   required={true}
                 />
                 <Input

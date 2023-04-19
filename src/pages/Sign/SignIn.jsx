@@ -113,7 +113,7 @@ const SignIn = () => {
                       e
                     )
                   }
-                  errorMsg="password should contain atleast one number and one special character and letter !"
+                  errorMsg="password should contain atleast one number, letter, one special character [@$!%*?&]"
                   required={true}
                 />
               </div>
