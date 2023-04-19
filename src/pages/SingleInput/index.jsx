@@ -53,6 +53,7 @@ const SingleInput = () => {
           ) : (
             <CardsList list={textToImageResluts || []} />
           )}
+          {error && <p className="error__msg">{error?.message}</p>}
         </section>
         <section className={`section ${styles.section}`}>
           <h4 className="section__title">Selected Designs (12)</h4>

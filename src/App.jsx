@@ -15,6 +15,7 @@ import {
   Pricing,
   Privacy,
   Profile,
+  ResetPassword,
   Settings,
   SignIn,
   SignUp,
@@ -47,6 +48,14 @@ const App = () => {
           element={
             <LoginGuard>
               <SignUp />
+            </LoginGuard>
+          }
+        />
+        <Route
+          path="reset__password"
+          element={
+            <LoginGuard>
+              <ResetPassword />
             </LoginGuard>
           }
         />

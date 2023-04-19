@@ -142,9 +142,38 @@
   border-right-color: #ffffff3b;
   animation: spinner 1s linear infinite;
 }
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  white-space: pre;
+  gap: 60px;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  button {
+    flex: 1;
+  }
+}
 @keyframes spinner {
   to {
     rotate: 360deg;
+  }
+}
+@media (max-width: 1199px) {
+  .input {
+    label {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .input {
+    gap: 20px;
   }
 }
 @media (max-width: 575px) {
@@ -190,5 +219,11 @@
         }
       }
     }
+  }
+  .input {
+    flex-wrap: wrap;
+  }
+  .btns {
+    gap: 20px;
   }
 }

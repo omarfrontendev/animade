@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, HeaderSettings, Input } from "../../components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import titleClasses from "../Settings/.module.scss";
 import axios from "axios";
@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const ChangePassword = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
-
+  const navigate = useNavigate();
   const updatePass = async () => {
     setLoading(true);
     try {
@@ -31,6 +31,8 @@ const ChangePassword = () => {
         position: toast.POSITION.TOP_RIGHT,
         className: "toast__fiy",
       });
+      setData({});
+      navigate("/");
     } catch (error) {
       toast.error(error.response.data.old_password[0] || "Something Wrong!", {
         position: toast.POSITION.TOP_RIGHT,
@@ -49,6 +51,15 @@ const ChangePassword = () => {
       <IoIosArrowBack /> Change Password
     </h5>
   );
+  let validate = true;
+
+  if (
+    data?.old_password?.length > 6 &&
+    data?.new_password?.length > 6 &&
+    data?.confirmpassword === data?.new_password
+  ) {
+    validate = false;
+  }
 
   return (
     <div className={styles.page}>
@@ -71,6 +82,10 @@ const ChangePassword = () => {
                 old_password: e.target.value,
               })
             }
+            validation={(e) => e.length > 6}
+            errorMsg="New password Must be More Than 6 character"
+            required={true}
+            value={data?.old_password || ""}
           />
         </div>
         <div className={styles.input__box}>
@@ -84,16 +99,30 @@ const ChangePassword = () => {
                 new_password: e.target.value,
               })
             }
+            validation={(e) => e.length > 6}
+            errorMsg="New password Must be More Than 6 character"
+            required={true}
+            value={data?.new_password || ""}
           />
         </div>
-        {/* <div className={styles.input__box}>
-          <label>Confirm New Password</label>
-          <Input type="password" placeholder="Confirm New Password" />
-        </div> */}
-        {/* <button type="submit" className={styles.submit__btn}>
-          Change Password
-        </button> */}
-        <Button type="submit" loading={loading}>
+        <div className={styles.input__box}>
+          <label>Confirm Password</label>
+          <Input
+            placeholder="Confirm Password"
+            type="password"
+            onChange={(e) =>
+              setData({
+                ...data,
+                confirmpassword: e.target.value,
+              })
+            }
+            validation={(e) => e === data?.new_password}
+            errorMsg="Confirm Password Must be Matched with New Password"
+            required={true}
+            value={data?.confirmpassword || ""}
+          />
+        </div>
+        <Button type="submit" loading={loading} disabled={validate}>
           Change Password
         </Button>
       </form>

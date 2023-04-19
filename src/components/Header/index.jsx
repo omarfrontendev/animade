@@ -5,8 +5,8 @@ import { Button } from "../";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/services/logout";
-import styles from "./.module.scss";
 import { toast } from "react-toastify";
+import styles from "./.module.scss";
 
 const Header = () => {
   const { token, isLoaing } = useSelector((state) => state.auth);

@@ -20,3 +20,4 @@ export { default as SingleDrop } from "./SingleDrop";
 export { default as SingleComplete } from "./SingleComplete";
 export { default as Financial } from "./Financial";
 export { default as NTF } from "./NTF";
+export { default as ResetPassword } from "./Sign/ResetPassword";

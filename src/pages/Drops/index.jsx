@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { RocketIcon } from "../../icons";
 import { BsPlusLg } from "react-icons/bs";
-import styles from "./.module.scss";
-import Title from "../../components/Title";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import Modal from "../../components/Modal";
+import styles from "./.module.scss";
 
 const Drops = () => {
   const [openPopup, setOpenPopup] = useState(false);

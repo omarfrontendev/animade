@@ -20,6 +20,20 @@
     margin-left: auto;
   }
 }
+.models {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  .model__p {
+    font-size: 18px;
+    line-height: 34px;
+    padding: 14px 20px;
+    background-color: #aaaaaa2d;
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+    color: #fff;
+  }
+}
 @media (max-width: 767px) {
   .section__form {
     flex-direction: column;

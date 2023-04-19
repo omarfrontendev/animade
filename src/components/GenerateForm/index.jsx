@@ -10,6 +10,8 @@ const GenerateForm = ({
   setData,
   data,
   loading,
+  max,
+  model,
 }) => {
   return (
     <form
@@ -27,15 +29,27 @@ const GenerateForm = ({
         required={true}
       />
       <div className={styles.form__control}>
-        <span>Images per prompt</span>
-        <input
-          type="number"
-          required
-          min="1"
-          max="4"
-          value={data?.samples || ""}
-          onChange={(e) => setData({ ...data, samples: e.target.value })}
-        />
+        {model ? (
+          <></>
+        ) : (
+          <>
+            <span>Images per prompt</span>
+            <input
+              type="number"
+              required
+              min="1"
+              max={max || "3"}
+              value={data?.samples || ""}
+              onChange={(e) =>
+                setData({
+                  ...data,
+                  samples: e.target.value,
+                  n: +e.target.value,
+                })
+              }
+            />
+          </>
+        )}
         <Button color="purple" type="submit" loading={loading}>
           <div className={styles.generat__btn}>
             {type === "ai" ? "Ask Ai" : "Generate"}

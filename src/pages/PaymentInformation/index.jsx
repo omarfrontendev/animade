@@ -3,13 +3,7 @@ import { Button, CheckoutForm, HeaderSettings, Input } from "../../components";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import titleClasses from "../Settings/.module.scss";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
 import styles from "./.module.scss";
-
-const stripePromise = loadStripe(
-  "pk_test_51LNF3wCuskqUZKWT5ZQXcSa0c96FP2jFu0ubWGrTlLJbomfuPT9z9edcFa5EFK2PBFhx64xGi7MdzDrRmFGQN0ED00G981buvD"
-);
 
 const PaymentInformation = () => {
   const title = (
@@ -56,9 +50,6 @@ const PaymentInformation = () => {
           <Button type="button">Update & Replace</Button>
         </form>
       </div> */}
-      <Elements stripe={stripePromise}>
-        <CheckoutForm />
-      </Elements>
     </div>
   );
 };

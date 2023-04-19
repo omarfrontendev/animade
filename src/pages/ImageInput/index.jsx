@@ -43,9 +43,6 @@ const ImageInput = () => {
       uploadBytes(imageRef, imageUpload).then(() => {
         setLoading(false);
         setimageUploaded(true);
-        // getDownloadURL(ref(storage, imageUpload.name)).then((url) =>
-        //   console.log(url)
-        // );
       });
     }
   }, [imageUpload]);
@@ -76,6 +73,7 @@ const ImageInput = () => {
               setData={setData}
               data={data}
               loading={isLoading}
+              max="3"
             />
           </div>
           <div className={styles.upload__image}>

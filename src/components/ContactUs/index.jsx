@@ -16,10 +16,10 @@ const ContactUs = () => {
 
   if (
     data?.name?.length > 0 &&
-    data?.email.includes("@" && ".") &&
-    data?.email.slice(-1) !== "." &&
-    data?.number.length > 4 &&
-    data?.message.length > 0
+    data?.email?.includes("@" && ".") &&
+    data?.email?.slice(-1) !== "." &&
+    data?.number?.length > 4 &&
+    data?.message?.length > 0
   ) {
     validate = false;
   }

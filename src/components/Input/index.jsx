@@ -31,8 +31,8 @@ const Input = ({
           value={value || ""}
         />
         {error && <p className={styles.error__message}>{error}</p>}
-        {!error && errorInput && (
-          <p className={styles.error__message}>{errorMsg}</p>
+        {!error && errorInput && errorMsg && (
+          <p className={`${styles.error__input}`}>{errorMsg}</p>
         )}
       </div>
     );
@@ -50,9 +50,15 @@ const Input = ({
         required={required}
         value={value || ""}
       />
-      {error && <p className={styles.error__message}>{error}</p>}
-      {!error && errorInput && (
-        <p className={styles.error__message}>{errorMsg}</p>
+      {error && (
+        <p className={styles.error__message}>
+          {error?.map((msg, i) => (
+            <div key={i}>{msg}</div>
+          ))}
+        </p>
+      )}
+      {!error && errorInput && errorMsg && (
+        <p className={`${styles.error__input}`}>{errorMsg}</p>
       )}
       {type === "password" && (
         <button

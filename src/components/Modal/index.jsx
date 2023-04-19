@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "../Button";
-import Input from "../Input";
 import Title from "../Title";
 import styles from "./.module.scss";
 

@@ -23,15 +23,18 @@ const SignUp = () => {
   let validate = true;
 
   if (
-    data?.username?.length > 0 &&
-    data?.password?.length > 6 &&
-    data?.confirmpassword === data?.password &&
-    data?.email.includes("@" && ".") &&
-    data?.email.slice(-1) !== "." &&
-    data?.phonenumber.length > 4
+    data?.username &&
+    !data?.username.includes(" ") &&
+    data?.phonenumber.length > 3 &&
+    /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(data?.email) &&
+    /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+      data?.password
+    ) &&
+    data?.confirmpassword === data?.password
   ) {
     validate = false;
   }
+
   return (
     <div className={styles.page}>
       <div className="container">
@@ -65,8 +68,8 @@ const SignUp = () => {
                   placeholder="Your Name"
                   onChange={(e) => inputChangeHandler(e, "username")}
                   error={error?.response?.data?.username}
-                  validation={(e) => e.length > 0}
-                  errorMsg="This Field Can't Be Empty"
+                  validation={(e) => e && !e.includes(" ")}
+                  errorMsg={`This Field Can't Be Empty, Not Contain a Space " " !`}
                   required={true}
                   value={data?.username || ""}
                 />
@@ -76,7 +79,7 @@ const SignUp = () => {
                   onChange={(e) => inputChangeHandler(e, "phonenumber")}
                   error={error?.response?.data?.phonenumber}
                   validation={(e) => e.length > 4}
-                  errorMsg="Number Must be More Than (4 ch)"
+                  errorMsg="Number atleast 4 charachter !"
                   required={true}
                   value={data?.phonenumber || ""}
                 />
@@ -87,9 +90,9 @@ const SignUp = () => {
                 onChange={(e) => inputChangeHandler(e, "email")}
                 error={error?.response?.data?.email}
                 validation={(e) =>
-                  e.includes("@" && ".") && e.slice(-1) !== "."
+                  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(e)
                 }
-                errorMsg="Enter in the format:name@example.com"
+                errorMsg="Enter in the format:name@example.com !"
                 required={true}
                 value={data?.email || ""}
               />
@@ -114,8 +117,12 @@ const SignUp = () => {
                 type="password"
                 onChange={(e) => inputChangeHandler(e, "password")}
                 error={error?.response?.data?.password}
-                validation={(e) => e.length > 6}
-                errorMsg="Password Must be More Than 6 character"
+                validation={(e) =>
+                  /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+                    e
+                  )
+                }
+                errorMsg="password should contain atleast one number and one special character and letter !"
                 required={true}
                 value={data?.password || ""}
               />
