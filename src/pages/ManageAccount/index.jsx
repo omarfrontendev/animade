@@ -37,7 +37,7 @@ const ManageAccount = () => {
   const getAccessToken = async () => {
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_PRINTFUL__API__URL}/oauth/token`,
+        `https://www.printful.com/oauth/token/oauth/token`,
         {
           grant_type: "authorization_code",
           client_id: clientId,
