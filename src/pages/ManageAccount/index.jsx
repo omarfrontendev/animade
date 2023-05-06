@@ -37,7 +37,7 @@ const ManageAccount = () => {
   const getAccessToken = async () => {
     try {
       const { data } = await axios.post(
-        `https://www.printful.com/oauth/token/oauth/token`,
+        `https://www.printful.com/oauth/token`,
         {
           grant_type: "authorization_code",
           client_id: clientId,
@@ -69,7 +69,7 @@ const ManageAccount = () => {
     }
   };
 
-  // ==== add product ======
+  // ==== add product ====== //#//
   const addProductToPrintFul = async () => {
     try {
       const res = await axios.post(
