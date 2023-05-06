@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"; // useEffect
+import React, { useState } from "react"; // useEffect
 import { IoIosAdd } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 import { HeaderSettings, PlatFormCard } from "../../components";
@@ -8,6 +8,7 @@ import axios from "axios";
 import styles from "../ChoosePlatform/.module.scss";
 
 const ManageAccount = () => {
+  const [data, setData] = useState({});
   const title = (
     <h5 className={titleClasses.title__header}>
       <span>
@@ -35,11 +36,29 @@ const ManageAccount = () => {
   // ==== get access token ======
   const getAccessToken = async () => {
     try {
-      const res = await axios.post("https://www.printful.com/oauth/token", {
-        grant_type: "authorization_code",
-        client_id: clientId,
-        client_secret: clientSecret,
-        code: token,
+      const { data } = await axios.post(
+        "https://www.printful.com/oauth/token",
+        {
+          grant_type: "authorization_code",
+          client_id: clientId,
+          client_secret: clientSecret,
+          code: token,
+        }
+      );
+      setData(data);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // ==== get products ======
+  const getProducts = async () => {
+    try {
+      const res = await axios.get("https://api.printful.com/store/products", {
+        headers: {
+          Authorization: `Bearer ${data.access_token}`,
+        },
       });
       console.log(res);
     } catch (error) {
@@ -47,55 +66,36 @@ const ManageAccount = () => {
     }
   };
 
-  // ==== get products ======
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     try {
-  //       const res = await axios.get("https://api.printful.com/store/products", {
-  //         headers: {
-  //           Authorization: `Bearer ${access__token}`,
-  //         },
-  //       });
-  //       console.log(res);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   if (token) {
-  //     getProducts();
-  //   }
-  // }, [token]);
-
   // ==== add product ======
-
-  // const addProductToPrintFul = async () => {
-  //   try {
-  //     const res = await axios.post(
-  //       "https://api.printful.com/store/products",
-  //       {
-  //         sync_product: {
-  //           name: "Framed Landscape Poster",
-  //         },
-  //         sync_variants: {
-  //           variant_id: 10760,
-  //           files: [
-  //             {
-  //               url: "http://example.com/files/posters/poster_1.jpg",
-  //             },
-  //           ],
-  //         },
-  //       },
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${access__token}`,
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const addProductToPrintFul = async () => {
+    try {
+      const res = await axios.post(
+        "https://api.printful.com/store/products",
+        {
+          sync_product: {
+            name: "Framed Landscape Poster",
+          },
+          sync_variants: {
+            variant_id: 10760,
+            files: [
+              {
+                url: "http://example.com/files/posters/poster_1.jpg",
+              },
+            ],
+          },
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${data.access_token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className={styles.page}>
@@ -114,6 +114,10 @@ const ManageAccount = () => {
           </a>
         </div>
         <button onClick={() => getAccessToken()}>Get Access Token</button>
+        <br />
+        <button onClick={() => getProducts()}>Get Products</button>
+        <br />
+        <button onClick={() => addProductToPrintFul()}>Add Product</button>
         <div className={styles.platform__list}>
           {new Array(3).fill("").map((_, i) => (
             <PlatFormCard key={i} type="OpenSea" />
