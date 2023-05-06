@@ -75,12 +75,6 @@ const ManageAccount = () => {
       const res = await axios.post(
         `${process.env.REACT_APP_PRINTFUL__API__URL}/store/products`,
         {
-          headers: {
-            Authorization: `Bearer ${data.access_token}`,
-            "Content-Type": "application/json",
-          },
-        },
-        {
           sync_product: {
             name: "T-Shirt",
             thumbnail: "https://picsum.photos/200/300",
@@ -113,6 +107,11 @@ const ManageAccount = () => {
               ],
             },
           ],
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${data.access_token}`,
+          },
         }
       );
       console.log(res);
