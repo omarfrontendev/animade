@@ -95,43 +95,455 @@ export const SidebarLinks = [
 ];
 
 export const privacyBoxprags = [
-  `Welcome to Animade (www.animade.world), an online platform that enables users to produce and upload designs to non-fungible token (NFT) and Print-On-Demand platforms for the purposes of buying, selling, and showcasing. I am privileged to present to you this document which outlines the terms and conditions ("T&Cs") that govern the use of our platform.`,
-  `Throughout these terms and conditions, the expressions "we," "us,", “the platform” and "our" refer to Animade, while "you" and "user" denote individuals who utilise our platform. By utilising our platform, you enter into a legally binding agreement to comply with these T&Cs. It is crucial that you carefully read and comprehend these terms before creating an account with us. Should you find that you do not concur with any of the conditions stipulated herein, we respectfully request that you do not proceed with the use of our platform.`,
-  `As a user of our platform, you have the obligation to provide accurate information when creating an account, maintain the security and confidentiality of your login credentials, and promptly report any unauthorised use of your account. We reserve the right to refuse service to any person, monitor user activities on the platform, and collect and process data concerning user access and use of the platform. Furthermore, we reserve the right to impose a commission on your proceeds in exchange for utilising our services. In the event of any disputes with third-party providers, you, as a user, are responsible for resolving them and indemnifying and holding the platform harmless from any claims or damages.`,
-  `We may display advertisements, use your data for marketing purposes, and share your data with third-party providers. However, you have the right to opt out of any marketing communications from our platform at any time. Additionally, you may request the deletion of your account and data, except for data that is owned by the platform in accordance with this document. Please note that we are not liable for any loss or damage resulting from a data breach, and you assume full responsibility for the security of your account and data. Please review the full details of the terms and conditions provided below.`,
+  `This privacy policy shall govern the relationship between the User of this Website and Animade,
+the proprietor and provider of this Website. Animade is committed to upholding the privacy of
+your information and this policy shall apply to any and all Data collected by us or provided by
+you, in relation to your use of the Website.
+`,
+  `It is important to note that this privacy policy should be read in conjunction with our Terms and
+Conditions, which can be accessed at <a href='https://animade.world/legal' target="_blank">https://animade.world/legal</a>.
+`,
+  // ============================
 ];
 
 export const privacyListOne = [
-  "When creating an account, it is the user's obligation to provide precise and up-to-date information. The failure to do so may result in the termination of the account.",
-  `The platform reserves the right to request further information from the user to verify their identity, and may do so at any time. Such verification may include the use of a third-party service provider.`,
-  `The platform reserves the right to decline service to any person for any reason, including without limitation, if the platform believes that the user's conduct violates the terms and conditions of the platform or is illegal.`,
-  `The platform may suspend or terminate a user's account without prior notice or explanation, including without limitation, if the user violates the terms and conditions of the platform or engages in any activity that the platform deems harmful to its operations.`,
-  `The user is solely accountable for all activities undertaken using their account. Any unauthorized use of the user's account must be reported to the platform immediately.`,
-  `The user must keep their login credentials confidential and secure. The user may not disclose their login credentials to any third-party, and the platform will not be liable for any damages or losses resulting from the user's failure to comply with this requirement.`,
-  `The platform may monitor the user's activities on the platform for security purposes. The platform may collect and process data regarding the user's access and use of the platform, including without limitation, the user's IP address, location, and usage data. The user consents to such monitoring and data processing by using the platform.`,
+  `Data" collectively refers to all information submitted to Animade via the Website.
+This definition includes, where applicable, definitions provided in the Data
+Protection Laws`,
+  `"Cookies" refer to a small text file placed on your computer by this Website when
+you visit certain parts of the Website and/or when you use certain features of the
+Website. The details of cookies used by this Website are specified in the clause`,
+  ` "Data Protection Laws" are defined as any applicable laws that relate to the
+processing of personal Data, including but not limited to the GDPR, and any
+national implementing and supplementary laws, regulations and secondary
+legislation`,
+  `"GDPR" refers to the UK General Data Protection Regulation`,
+  `Animade", "we" or "us" refers to Animade, located at Winchmore, Chalk Lane,
+Surrey, kT24 6TH`,
+  `"UK and EU Cookie Law" refers to the Privacy and Electronic Communications
+(EC Directive) Regulations 2003 as amended by the Privacy and Electronic
+Communications (EC Directive) (Amendment) Regulations 2011 & the Privacy
+and Electronic Communications (EC Directive) (Amendment) Regulations 2018`,
+  `"User" or "you" refers to any third party who accesses the Website and is not
+either (i) employed by Animade and acting in the course of their employment or
+(ii) engaged as a consultant or otherwise providing services to Animade and
+accessing the Website in connection with the provision of such services`,
+  `"Website" refers to the website that you are currently using,
+<a href="https://www.animade.world" target="_blank">https://www.animade.world</a>, and any sub-domains of this site unless expressly
+excluded by their own terms and conditions`,
 ];
 
 export const privacyListTwo = [
   {
-    text: `The platform reserves the right to impose a commission on the user's proceeds in exchange for using its services. This commission consists of a sum equivalent to 3% of the NFT's initial sale, 1% of NFT royalty, and 3% of print-on-demand sales, along with a further 3% of earnings from all additional sources that utilize the designs generated by the platform, or from sources that use an altered rendition of the said designs.`,
+    text: `The singular shall include the plural and vice versa`,
+  },
+  {
+    text: `References to sub-clauses, clauses, schedules, or appendices are to
+    sub-clauses, clauses, schedules, or appendices of this privacy policy`,
     list: [
-      "To further expound, the platform shall retain 3% of the original sales value of an NFT, which is a unique cryptographic asset that represents ownership of a digital asset or other form of property, during its initial sale on the platform. Additionally, for any royalties paid out to the user following the initial sale, the platform shall retain 1% of the said amount as commission. For print-on-demand sales of designs created using the platform, the platform shall retain 3% of the sales value.",
-      `It is important to note that any additional sources of income generated from designs produced using the platform, or edited versions of the same, shall also be subject to a commission of 3%.`,
-      `In the event of a dispute, the governing law and jurisdiction specified in Section VII of this agreement shall be used to resolve the issue.`,
+      `A reference to a person includes firms, companies, government entities,
+      trusts and partnerships`,
     ],
   },
   {
-    text: "Users shall be provided with 50 free designs per month. If the user exceeds this limit, they may purchase additional designs through variously priced packages for a monthly fee. Additional designs may solely be procured on a monthly basis and are not transferrable to the following month.",
+    text: `"including" shall be understood to mean "including without limitation"`,
   },
   {
-    text: ` If the user terminates their package, any unused design credits shall remain credited to their account for the remainder of the month, and they shall not be charged for the following month's package.`,
+    text: `Reference to any statutory provision includes any modification or amendment of it`,
   },
   {
-    text: "If the user endeavors to evade payment, the platform retains the right to terminate their account. In such cases, the platform may seize the commercial rights to the images, as well as all income from linked monetization platforms.",
+    text: `The headings and sub-headings do not form part of this privacy policy`,
+  },
+];
+
+export const privacyListThree = [
+  `Name`,
+  `Date of birth`,
+  `Contact information such as email addresses and telephone numbers`,
+  `Financial information such as credit/debit card numbers`,
+  `IP address (automatically collected)`,
+  `Web browser type and version (automatically collected)`,
+  `Operating system (automatically collected)`,
+  `A list of URLs starting with a referring site, your activity on this Website, and the
+  site you exit to (automatically collected)`,
+  `Printful store information: To create and upload Printful products on the user's
+  behalf, and for billing the user as a percentage of revenue, including but not
+  limited to; sales and revenue information, refund information, and changes in
+  prices`,
+  `Opensea information: To upload NFTs on the user's behalf, and for billing the
+  user as a percentage of revenue, including but not limited to; sales and revenue
+  information, refund information, and changes in prices, changes to collections,
+  information for all active NFTs`,
+  `Metadata required to upload products to Printful: We use this data to provide
+  accurate metadata for your Printful products including; Titles, descriptions, SEO
+  tags, the desired product sections (on your printful store), pricing information with
+  desired revenue`,
+  `Metadata required to upload products to Opensea: We use this data to provide
+  accurate metadata for your Opensea products including; Titles, descriptions,
+  SEO tags, the desired collection, pricing information with the desired revenue,
+  blockchain information, unlockable content, supply, and prices
+  `,
+];
+
+export const privacyListFour = [
+  {
+    text: ` Data is given to us by you: We collect Data when you provide it to us directly, for
+    example:`,
+    list: [
+      `when you contact us through the Website, by telephone, post, e-mail or
+      through any other means`,
+      `when you register with us and set up an account to receive our
+      products/services`,
+      `when you complete surveys that we use for research purposes (although
+      you are not obliged to respond to them)`,
+      `when you enter a competition or promotion through a social media
+      channel`,
+      `when you make payments to us, through this Website or otherwise`,
+      `when you elect to receive marketing communications from us`,
+      `when you use our services`,
+    ],
   },
   {
-    text: `To assist users in monitoring their earnings adjusted for the platform's small fees, financial tracking services are accessible on the platform.`,
+    text: `Data is received from other sources: We may receive Data about you from other
+    sources, such as third-party service providers, business partners, or publicly
+    available sources. For instance:`,
+    list: [
+      `Social Media - We may obtain your contact information from a social
+      media platform if you choose to connect with us on that platform.
+      `,
+      `Google Analytics & Adverts - We may use google analytics to track and
+      advertise our products to you
+      `,
+    ],
   },
+  {
+    text: `Data is collected automatically: We also collect Data automatically through your
+      use of our Website. This information may include your IP address, web browser
+      type and version, operating system, and other technical information. We may
+      also collect information about your activity on our Website, such as the pages
+      you visit, the time and date of your visit, and the referring website. Additionally`,
+    list: [
+      `We automatically collect some information about your visit to the Website.
+      This information helps us to make improvements to Website content and
+      navigation, and includes your IP address, the date, times and frequency
+      with which you access the Website and the way you use and interact with
+      its content.`,
+      `We will collect your Data automatically via cookies, in line with the cookie
+      settings on your browser. For more information about cookies, and how
+      we use them on the Website, see the section below, headed "Cookies".`,
+    ],
+  },
+];
+
+export const privacyListFive = [
+  `internal record keeping`,
+  `improvement of our products / services`,
+  `transmission by email of marketing materials that may be of interest to you`,
+  `contact for market research purposes which may be done using email`,
+  `telephone, fax or mail. Such information may be used to customise or update the
+  Website`,
+  `uploading products and NFTs to Printful and Opensea respectively, to determine
+  the billing amount, and in an attempt to investigate any violations of the law or
+  our Terms and Conditions`,
+];
+
+export const privacyListSix = [
+  `soft opt-in consent is a specific type of consent which applies when you have
+  previously engaged with us (for example, you contact us to ask us for more
+  details about a particular product/service, and we are marketing similar
+  products/services). Under "soft opt-in" consent, we will take your consent as
+  given unless you opt-out`,
+  `for other types of e-marketing, we are required to obtain your explicit consent;
+  that is, you need to take positive and affirmative action when consenting by, for
+  example, checking a tick box that we'll provide.`,
+  `if you are not satisfied with our approach to marketing, you have the right to
+  withdraw consent at any time. To find out how to withdraw your consent, see the
+  section headed "Your rights" below.`,
+];
+
+export const privacyListSeven = [
+  `any of our group companies or affiliates - to improve our services, and to ensure
+  the proper administration of our website and business. Specifically, all
+  businesses affiliated with the Fort Technologies group`,
+  `our employees, agents and/or professional advisors - to provide customer
+  support, to comply with legal obligations, and to improve our services`,
+  `third party service providers who provide services to us which require the
+  processing of personal data - to provide integrated services for AI image
+  generation, AI text generation, uploading images and metadata to Printful and
+  Opensea, payment providers, and Google customer analytics, which ensure the
+  website runs smoothly and allows us to track customer journeys`,
+  `third party payment providers who process payments made over the Website - to
+  enable the process of payments and refunds`,
+  `e. relevant authorities - to facilitate the detection of crime or the collection of taxes
+  or duties`,
+];
+
+export const privacyList8 = [
+  `access to your account is controlled by a password and a user name that is
+  unique to you.
+  `,
+  `we store your Data on secure servers.`,
+  `payment details are encrypted using SSL technology (typically you will see a lock
+  icon or green address bar (or both) in your browser when we use this technology.`,
+];
+
+export const privacyList9 = [
+  `Right to access - the right to request (i) copies of the information we hold about
+    you at any time, or (ii) that we modify, update or delete such information. If we
+    provide you with access to the information we hold about you, we will not charge
+    you for this, unless your request is "manifestly unfounded or excessive." Where
+    we are legally permitted to do so, we may refuse your request. If we refuse your
+    request, we will tell you the reasons why`,
+  `Right to correct - the right to have your Data rectified if it is inaccurate or
+    incomplete.`,
+  `Right to erase - the right to request that we delete or remove your Data from our
+    systems.
+    `,
+  `Right to restrict our use of your Data - the right to "block" us from using your
+    Data or limit the way in which we can use it.`,
+  `Right to data portability - the right to request that we move, copy or transfer
+    your Data`,
+  `Right to object - the right to object to our use of your Data including where we
+    use it for our legitimate interests.
+    `,
+];
+
+export const conditonsList1 = [
+  `When creating an account, it is the user's obligation to provide precise and
+  up-to-date information. The failure to do so may result in the termination of the
+  account`,
+  `The platform reserves the right to request further information from the user to
+  verify their identity, and may do so at any time. Such verification may include the
+  use of a third-party service provider`,
+  `The platform reserves the right to decline service to any person for any reason,
+  including without limitation, if the platform believes that the user's conduct
+  violates the terms and conditions of the platform or is illegal.`,
+  `The platform may suspend or terminate a user's account without prior notice or
+  explanation, including without limitation, if the user violates the terms and
+  conditions of the platform or engages in any activity that the platform deems
+  harmful to its operations.
+  `,
+  `The user is solely accountable for all activities undertaken using their account.
+  Any unauthorized use of the user's account must be reported to the platform
+  immediately`,
+  `The user must keep their login credentials confidential and secure. The user may
+  not disclose their login credentials to any third-party, and the platform will not be
+  liable for any damages or losses resulting from the user's failure to comply with
+  this requirement.`,
+  `The platform may monitor the user's activities on the platform for security
+  purposes. The platform may collect and process data regarding the user's access
+  and use of the platform, including without limitation, the user's IP address,
+  location, and usage data. The user consents to such monitoring and data
+  processing by using the platform`,
+];
+
+export const conditonsList2 = [
+  `The platform reserves the right to impose a commission on the user's proceeds
+in exchange for using its services. This commission consists of a sum equivalent
+to 3% of the NFT's initial sale, 1% of NFT royalty, and 3% of print-on-demand
+sales, along with a further 3% of earnings from all additional sources that utilize
+the designs generated by the platform, or from sources that use an altered
+rendition of the said designs. <br />
+= To further expound, the platform shall retain 3% of the original sales value
+of an NFT, which is a unique cryptographic asset that represents
+ownership of a digital asset or other form of property, during its initial sale
+on the platform. Additionally, for any royalties paid out to the user
+following the initial sale, the platform shall retain 1% of the said amount as
+commission. For print-on-demand sales of designs created using the
+platform, the platform shall retain 3% of the sales value
+<br />
+= It is important to note that any additional sources of income generated
+from designs produced using the platform, or edited versions of the same,
+shall also be subject to a commission of 3%.
+<br />
+= In the event of a dispute, the governing law and jurisdiction specified in
+Section VII of this agreement shall be used to resolve the issue.
+`,
+  `Users shall be provided with 50 free designs per month. If the user exceeds this
+limit, they may purchase additional designs through variously priced packages for
+a monthly fee. Additional designs may solely be procured on a monthly basis and
+are not transferrable to the following month`,
+  `If the user terminates their package, any unused design credits shall remain
+credited to their account for the remainder of the month, and they shall not be
+charged for the following month's package.`,
+  `If the user endeavors to evade payment, the platform retains the right to
+terminate their account. In such cases, the platform may seize the commercial
+rights to the images, as well as all income from linked monetization platforms.
+`,
+  `To assist users in monitoring their earnings adjusted for the platform's small fees,
+financial tracking services are accessible on the platform.
+`,
+  `Users are obligated to pay for their selected package of design credits in full
+before being able to create designs on the platform. Payment must be made
+through the payment methods accepted by the platform. The platform reserves
+the right to alter possible payment methods at any time, and the user must be
+willing to pay using this new payment method, else, they may face termination
+from the platform.
+`,
+  `Users are able to purchase design credits on a monthly basis to create designs
+on the platform. Any unused design credits from the current month will remain
+credited to the user's account for that month, and they will not be credited or
+charged for next month's packages. Additional designs can only be bought
+monthly, and they do not roll-over to the next month, so the subscribed designs
+must be used within the month the user purchased the credits until the same day
+of the next month.`,
+  `Unless with written consent from the provider, only one account per user is
+permitted, and any effort to contravene by creating additional accounts may
+result in termination.
+`,
+];
+
+export const conditonsList3 = [
+  `The user must indemnify and hold the platform harmless from any claims or
+damages arising from their use of the platform. This includes but is not limited to
+any third-party claims or damages.`,
+  `The platform provides no guarantees as to the quality or accuracy of the designs
+created on the platform.
+`,
+  `The platform is not responsible for any disputes that may arise between the user
+and third-party providers. It is the user's responsibility to resolve any such
+disputes.`,
+  `The platform does not endorse any third-party products or services`,
+  `The platform reserves the right to display advertisements on the platform.`,
+  `The platform may use the user's data for marketing purposes.`,
+  `The user has the right to opt out of any marketing communications from the
+platform at any time.`,
+  `The platform may share the user's data with third-party providers in order to
+provide the service`,
+  `The platform may use third-party services for data storage and processing.`,
+  `The platform may transfer the user's data to a third-party if the platform is
+acquired by another company.`,
+  `The user may request the deletion of their account and data at any time, except
+any data that is owned by the platform according to this document, such as the
+designs.`,
+  `The platform is not liable for any loss or damage resulting from a data breach.`,
+  `The user assumes full responsibility for any such loss or damage.`,
+  `The user must comply with all applicable laws and regulations when using the
+platform.`,
+  `The platform may cooperate with law enforcement in the event of a criminal
+investigation.`,
+  `The platform may disclose the user's data if required by law or court order`,
+  `The user is responsible for using OpenAIs and Stable Diffusions software and
+agrees not to violate their terms of service by using our service`,
+  `The platform owns the commercial rights to all images created on its platform.`,
+  `Users may lease commercial rights to designs on monetizable and
+non-monetizable channels, provided they continue to pay the commission fee as
+a percentage of revenues created by the designs created on the platform.
+`,
+];
+
+export const conditonsList4 = [
+  `The platform, being the owner of this website and its related services, hereby
+asserts its right to modify its terms and conditions and privacy policy at its
+discretion and without prior notice to users. In accepting the terms and conditions
+of this website, users acknowledge and agree that they are bound by any
+modifications made by the platform and its related entities, and shall be deemed
+to have accepted the new terms by continuing to use the platform.
+`,
+  `The platform, in its sole discretion, may terminate a user's account for any
+reason, without notice or liability to the user. Upon termination of a user's
+account, the platform shall immediately revoke the commercial rights to the
+images created by the user, as well as any revenue generated from such images,
+without compensation to the user`,
+  `Termination will deny the user the right to use the platform on the terminated
+account, or any other account created by the terminated user, indefinitely.`,
+  `In the event that a user attempts to avoid paying charges for their use of the
+platform, the platform may terminate their account and reclaim the commercial
+rights to the images, as well as all income from monetization platforms from the
+point of reclamation onwards. The user must keep the products produced with
+the designs listed on their website and store. Failure to do so will result in a claim
+of the expected revenue for all products with those designs, which will be no
+lower than the current revenue of those products with designs created by the
+platform.
+`,
+];
+
+export const conditonsList5 = [
+  `The platform reserves the right to update or modify the terms and conditions at
+any time without notice. Any changes to the terms and conditions will take effect
+immediately upon posting on the platform. By continuing to use the platform,
+users agree to be bound by the modified terms and conditions.
+`,
+  `The user agrees to review the terms and conditions regularly to ensure
+compliance with the latest updates and modifications.`,
+  `The platform may require the user to agree to additional terms and conditions for
+certain features or services offered by the platform. These additional terms and
+conditions will be presented to the user prior to using the relevant feature or
+service.
+`,
+  `The user may not sublicense or transfer their rights to use the platform to any
+third party without the prior written consent of the platform.
+`,
+  `The user may not use the platform to compete with the platform. Any attempt to
+do so may result in immediate termination of the user's account`,
+  `The platform reserves the right to terminate a user's account if the user engages
+in unfair competition, which includes any activity that aims to unfairly compete
+with the platform, such as using the platform to create designs that mimic or
+closely resemble the designs created by the platform.
+`,
+  `The platform may use feedback provided by the user for product improvement
+purposes, including but not limited to developing new features, improving existing
+features, and enhancing the overall user experience.`,
+  `The platform may offer beta features or services that are still under development
+and may be subject to additional terms and conditions. These beta features or
+services may be withdrawn at any time without notice.
+`,
+  `The platform may limit or suspend the user's access to the platform for
+maintenance or upgrades, which may result in temporary unavailability of the
+platform or certain features or services. The platform will endeavor to provide
+users with advance notice of any scheduled maintenance or upgrades that may
+affect their access to the platform.`,
+  `The platform reserves the right to modify, suspend, or terminate the platform at
+any time without notice. The platform will make reasonable efforts to provide
+users with advance notice of any such modification, suspension, or termination,
+and will endeavor to provide users with a reasonable transition period to retrieve
+any data or designs created on the platform before termination`,
+];
+
+export const conditonsList6 = [
+  `The platform is provided on an "as is" and "as available" basis without any
+warranties or representations, express or implied. Therefore, the platform shall
+not be held liable for any legal or financial repercussions arising from any use or
+misuse of the platform`,
+  `The platform does not accept any responsibility for any direct, indirect, incidental,
+consequential, or punitive damages arising from the use or inability to use the
+platform. This includes, but is not limited to, any loss of data or revenue resulting
+from the use or inability to use the platform`,
+  ` The platform is not liable for any damages resulting from the actions of third-party
+providers. Furthermore, the platform assumes no responsibility for any errors or
+omissions in the information provided on the platform.
+`,
+  `The user agrees that the platform's total liability for any claims arising from the
+use of the platform will not exceed the amount paid by the user to the platform for
+their monthly subscription (for additional designs) in the previous 4 months. The
+user further agrees to indemnify and hold the platform harmless against any and
+all claims or damages arising from any violation of these terms and conditions by
+the user`,
+];
+
+export const conditonsList7 = [
+  ` The terms and conditions are governed by and construed in accordance with the
+laws of the jurisdiction where the platform is registered, which is the United
+Kingdom.
+<br />
+{"   "} In accordance with this clause, the terms and conditions for the use of the
+platform are to be regulated by and interpreted in compliance with the
+laws of the jurisdiction where the platform is registered, which is the
+United Kingdom
+`,
+  `Any disputes arising from the use of the platform will be resolved by the courts of
+the jurisdiction where the platform is registered.
+`,
+  `Any financial claims for funds due to termination or otherwise can be pursued
+through legal means in the user's country, but any dispute regarding such claims
+must be resolved in London, United Kingdom, as the governing law of the United
+Kingdom shall apply to the resolution of such disputes.`,
+  `It is further established that any claims for financial compensation resulting from
+termination or any other cause can be pursued by legal means in the user's
+country. However, in the case of any dispute concerning such claims, the
+jurisdiction of London, United Kingdom shall apply, as the governing law of the
+United Kingdom shall govern the resolution of such disputes.
+`,
 ];
 
 export const settingsLinks = [

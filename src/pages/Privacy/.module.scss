@@ -37,6 +37,19 @@
   .content {
     .box {
       background-color: $dark__blue;
+      a {
+        color: #3498db;
+        font-weight: 500;
+      }
+      .tabel {
+        text-align: center;
+        th {
+          padding: 24px;
+        }
+        td {
+          padding: 10px;
+        }
+      }
       .box__header {
         width: 100%;
         display: flex;

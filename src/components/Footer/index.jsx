@@ -9,7 +9,7 @@ const Footer = () => {
       <Link to="/" className={styles.footer__logo}>
         <img src={Logo} alt="logo" />
       </Link>
-      <div>Legal</div>
+      <Link to="/privacy">Legal</Link>
     </footer>
   );
 };
