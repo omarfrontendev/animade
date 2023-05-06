@@ -1,17 +1,16 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import api from "../../api";
 
 export const getUser = createAsyncThunk("user/getUser", async (_, thunkAPI) => {
   const { rejectWithValue } = thunkAPI;
+  const token = thunkAPI.getState().auth.token;
   try {
-    const { data } = await axios.get(
-      `${process.env.REACT_APP_SERVER_API_URL}/auth/user/`,
-      {
-        headers: {
-          Authorization: `Token ${JSON.parse(localStorage.getItem("token"))}`,
-        },
-      }
-    );
+    const { data } = await api.get("/auth/user/", {
+      headers: {
+        Authorization: `Token ${token}`,
+        "content-type": "application/json",
+      },
+    });
     return data;
     // =====================
   } catch (error) {

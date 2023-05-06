@@ -4,14 +4,30 @@ import { Link, useNavigate } from "react-router-dom";
 import { Input, Title } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/services/register";
-import styles from "./.module.scss";
 import { getUser } from "../../redux/services/getUser";
+import { countriesCodes } from "../../utils/data";
+import {
+  emailMsg,
+  emailValidation,
+  passMsg,
+  passValidation,
+  userNameMsg,
+  userNameValidation,
+  phoneMsg,
+  phoneValidation,
+  confirmPassMsg,
+  confirmPassValidation,
+  formValidation,
+} from "../../utils/validators";
+import styles from "./.module.scss";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { error, isLoaing } = useSelector((state) => state.auth);
-  const [data, setData] = useState({});
+  const [data, setData] = useState({
+    code: countriesCodes[0].dial_code,
+  });
 
   const inputChangeHandler = (e, id) => {
     setData({
@@ -19,21 +35,7 @@ const SignUp = () => {
       [id]: e.target.value,
     });
   };
-
-  let validate = true;
-
-  if (
-    data?.username &&
-    !data?.username?.includes(" ") &&
-    data?.phonenumber?.length > 3 &&
-    /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(data?.email) &&
-    /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
-      data?.password
-    ) &&
-    data?.confirmpassword === data?.password
-  ) {
-    validate = false;
-  }
+  console.log(data.code);
 
   return (
     <div className={styles.page}>
@@ -64,11 +66,11 @@ const SignUp = () => {
               <div className={styles.first__inputs}>
                 <Input
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="Full Name"
                   onChange={(e) => inputChangeHandler(e, "username")}
                   error={error?.response?.data?.username}
-                  validation={(e) => e && !e.includes(" ")}
-                  errorMsg={`This Field Can't Be Empty, Not Contain a Space " " !`}
+                  validation={(e) => userNameValidation(e)}
+                  errorMsg={userNameMsg}
                   required={true}
                   value={data?.username || ""}
                 />
@@ -77,21 +79,21 @@ const SignUp = () => {
                   placeholder="Phone number"
                   onChange={(e) => inputChangeHandler(e, "phonenumber")}
                   error={error?.response?.data?.phonenumber}
-                  validation={(e) => e.length > 4}
-                  errorMsg="Number atleast 4 charachter !"
+                  validation={(e) => phoneValidation(e)}
+                  errorMsg={phoneMsg}
                   required={true}
                   value={data?.phonenumber || ""}
+                  setData={setData}
+                  data={data}
                 />
               </div>
               <Input
-                placeholder="Email Address"
+                placeholder="Your Email"
                 type="email"
                 onChange={(e) => inputChangeHandler(e, "email")}
                 error={error?.response?.data?.email}
-                validation={(e) =>
-                  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(e)
-                }
-                errorMsg="Enter in the format:name@example.com !"
+                validation={(e) => emailValidation(e)}
+                errorMsg={emailMsg}
                 required={true}
                 value={data?.email || ""}
               />
@@ -116,12 +118,8 @@ const SignUp = () => {
                 type="password"
                 onChange={(e) => inputChangeHandler(e, "password")}
                 error={error?.response?.data?.password}
-                validation={(e) =>
-                  /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
-                    e
-                  )
-                }
-                errorMsg="password should contain atleast one number, letter, one special character [@$!%*?&]"
+                validation={(e) => passValidation(e)}
+                errorMsg={passMsg}
                 required={true}
                 value={data?.password || ""}
               />
@@ -130,8 +128,8 @@ const SignUp = () => {
                 type="password"
                 onChange={(e) => inputChangeHandler(e, "confirmpassword")}
                 error={error?.response?.data?.confirmpassword}
-                validation={(e) => e === data?.password}
-                errorMsg="confirm Password Must be Matched with Password"
+                validation={(e) => confirmPassValidation(e, data?.password)}
+                errorMsg={confirmPassMsg}
                 required={true}
                 value={data?.confirmpassword || ""}
               />
@@ -141,7 +139,16 @@ const SignUp = () => {
               className={`${styles.login__btn} ${
                 isLoaing ? styles.loading : ""
               }`}
-              disabled={isLoaing || validate}
+              disabled={
+                isLoaing ||
+                !formValidation(
+                  userNameValidation(data?.username),
+                  phoneValidation(data?.phonenumber),
+                  emailValidation(data?.email),
+                  passValidation(data?.password),
+                  confirmPassValidation(data?.confirmpassword, data?.password)
+                )
+              }
             >
               {isLoaing ? (
                 <span className={styles.loader}></span>

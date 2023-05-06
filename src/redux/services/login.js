@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { customAlert } from "../../utils/alert";
 
 export const login = createAsyncThunk(
   "auth/login",
@@ -11,6 +11,7 @@ export const login = createAsyncThunk(
         `${process.env.REACT_APP_SERVER_API_URL}/login/`,
         JSON.stringify({
           username: formData.username,
+          // email: formData.email,
           password: formData.password,
         }),
         {
@@ -22,20 +23,13 @@ export const login = createAsyncThunk(
           redirect: "follow",
         }
       );
-      toast.success("Success Login!", {
-        position: toast.POSITION.TOP_RIGHT,
-        className: "toast__fiy",
-      });
+      customAlert("Success Login!", "success");
       return res.data;
     } catch (error) {
-      toast.error(
-        (error?.response?.data?.non_field_errors &&
-          error?.response?.data?.non_field_errors[0]) ||
-          "Something Wrong!",
-        {
-          position: toast.POSITION.TOP_RIGHT,
-          className: "toast__fiy",
-        }
+      customAlert(
+        error?.response?.data?.non_field_errors &&
+          error?.response?.data?.non_field_errors[0],
+        "error"
       );
       return rejectWithValue(error);
     }

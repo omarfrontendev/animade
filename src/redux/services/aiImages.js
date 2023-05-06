@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import config from "../../config";
 
 export const aiImages = createAsyncThunk(
   "AIResults/askAi",
@@ -7,7 +8,7 @@ export const aiImages = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const { data } = await axios.post(
-        "https://api.openai.com/v1/images/generations",
+        `${config.OPEN_AI_URL}/v1/images/generations`,
         {
           prompt: form.prompt,
           n: form.n,
@@ -16,7 +17,7 @@ export const aiImages = createAsyncThunk(
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer ${config.OPEN_AI_KEY}`,
           },
         }
       );

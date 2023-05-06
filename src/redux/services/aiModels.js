@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import config from "../../config";
 
 export const aiModels = createAsyncThunk(
   "AIResults/aiModels",
@@ -7,7 +8,7 @@ export const aiModels = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const { data } = await axios.post(
-        "https://api.openai.com/v1/chat/completions",
+        `${config.OPEN_AI_URL}/v1/chat/completions`,
         {
           model: "gpt-3.5-turbo",
           messages: [{ role: "user", content: form.prompt }],
@@ -15,7 +16,7 @@ export const aiModels = createAsyncThunk(
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer ${config.OPEN_AI_KEY}`,
           },
         }
       );

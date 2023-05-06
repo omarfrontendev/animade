@@ -1,5 +1,4 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { toast } from "react-toastify";
 
 export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   const { rejectWithValue } = thunkAPI;

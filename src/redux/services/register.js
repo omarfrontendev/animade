@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { customAlert } from "../../utils/alert";
 
 export const register = createAsyncThunk(
   "auth/register",
@@ -13,6 +13,7 @@ export const register = createAsyncThunk(
           username: formData.username,
           email: formData.email,
           password: formData.password,
+          phonenumber: formData.code + formData.phonenumber,
         }),
         {
           headers: {
@@ -23,20 +24,13 @@ export const register = createAsyncThunk(
           redirect: "follow",
         }
       );
-      toast.success("Success Register!", {
-        position: toast.POSITION.TOP_RIGHT,
-        className: "toast__fiy",
-      });
+      customAlert("Success Register!", "success");
       return res.data;
     } catch (error) {
-      toast.error(
-        (error?.response?.data?.non_field_errors &&
-          error?.response?.data?.non_field_errors[0]) ||
-          "Something Wrong!",
-        {
-          position: toast.POSITION.TOP_RIGHT,
-          className: "toast__fiy",
-        }
+      customAlert(
+        error?.response?.data?.non_field_errors &&
+          error?.response?.data?.non_field_errors[0],
+        "error"
       );
       return rejectWithValue(error);
     }

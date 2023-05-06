@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import styles from "./.module.scss";
 import { BiHide, BiShow } from "react-icons/bi";
+import AreaCode from "../AreaCode";
+import styles from "./.module.scss";
 
 const Input = ({
   type,
@@ -11,6 +12,8 @@ const Input = ({
   value,
   validation,
   errorMsg,
+  data,
+  setData,
 }) => {
   const [hide, setHide] = useState(true);
   const [inputBlur, setInputBlur] = useState(false);
@@ -21,7 +24,6 @@ const Input = ({
     return (
       <div className={styles.textarea}>
         <textarea
-          // className={styles.textarea}
           placeholder={placeholder}
           onChange={(e) => onChange(e)}
           onBlur={() => {
@@ -38,6 +40,9 @@ const Input = ({
     );
   return (
     <div className={`${styles.input} ${error ? styles.error : ""}`}>
+      {type === "number" && placeholder.includes("Phone") && (
+        <AreaCode setData={setData} data={data} />
+      )}
       <input
         type={
           type === "password" ? (hide ? "password" : "text") : type || "text"

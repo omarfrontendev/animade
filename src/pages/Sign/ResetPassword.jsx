@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import { Title, Input } from "../../components";
 import { useNavigate } from "react-router-dom";
 import styles from "./.module.scss";
-import axios from "axios";
-import { toast } from "react-toastify";
+import { customAlert } from "../../utils/alert";
+import api from "../../api";
+import {
+  passMsg,
+  passValidation,
+  confirmPassMsg,
+  confirmPassValidation,
+  formValidation,
+} from "../../utils/validators";
 
 const ResetPassword = () => {
   const [loading, setloading] = useState(false);
@@ -16,46 +23,20 @@ const ResetPassword = () => {
     setloading(true);
     setError(false);
     try {
-      await axios.post(
-        `${process.env.REACT_APP_SERVER_API_URL}/password_reset/confirm/`,
-        {
-          token: data.token,
-          password: data.password,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      setloading(false);
-      toast.success("Reset Your Password successfully !", {
-        position: toast.POSITION.TOP_RIGHT,
-        className: "toast__fiy",
+      await api.post("/password_reset/confirm/", {
+        token: data.token,
+        password: data.password,
       });
+      setloading(false);
+      customAlert("Reset Your Password successfully !", "success");
       setData({});
       navigate("/");
     } catch (error) {
       setloading(false);
       setError(error);
-      toast.error(error.response.data.detail, {
-        position: toast.POSITION.TOP_RIGHT,
-        className: "toast__fiy",
-      });
+      customAlert(error?.response?.data?.detail, "error");
     }
   };
-
-  let validate = true;
-
-  if (
-    data?.token &&
-    /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
-      data?.password
-    ) &&
-    data?.confirmpassword === data.password
-  ) {
-    validate = false;
-  }
 
   return (
     <>
@@ -63,12 +44,7 @@ const ResetPassword = () => {
         <div className="container">
           <div className={styles.page__content}>
             <Title align="center">
-              <div className={styles.main__title}>
-                {/* <span>Your dream products,</span>
-                <br />
-                <span>made possible.</span> */}
-                Check your email
-              </div>
+              <div className={styles.main__title}>Check your email</div>
             </Title>
             <form className={styles.form} onSubmit={submitFormHandler}>
               <div className={styles.inputs__group}>
@@ -98,12 +74,8 @@ const ResetPassword = () => {
                   }
                   value={data?.password || ""}
                   error={error?.response?.data?.password}
-                  validation={(e) =>
-                    /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
-                      e
-                    )
-                  }
-                  errorMsg="password should contain atleast one number, letter, one special character [@$!%*?&]"
+                  validation={(e) => passValidation(e)}
+                  errorMsg={passMsg}
                   required={true}
                 />
                 <Input
@@ -116,8 +88,8 @@ const ResetPassword = () => {
                     })
                   }
                   error={error?.response?.data?.confirmpassword}
-                  validation={(e) => e === data?.password}
-                  errorMsg="confirm Password Must be Matched with Password"
+                  validation={(e) => confirmPassValidation(e, data?.password)}
+                  errorMsg={confirmPassMsg}
                   required={true}
                   value={data?.confirmpassword || ""}
                 />
@@ -127,7 +99,14 @@ const ResetPassword = () => {
                 className={`${styles.login__btn} ${
                   loading ? styles.loading : ""
                 }`}
-                disabled={loading || validate}
+                disabled={
+                  loading ||
+                  !formValidation(
+                    data?.token,
+                    passValidation(data?.password),
+                    confirmPassValidation(data?.confirmpassword, data.password)
+                  )
+                }
               >
                 {loading ? (
                   <span className={styles.loader}></span>

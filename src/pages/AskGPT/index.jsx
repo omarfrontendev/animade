@@ -9,8 +9,6 @@ import {
 } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./.module.scss";
-import axios from "axios";
-import { aiImages } from "../../redux/services/aiImages";
 import { aiModels } from "../../redux/services/aiModels";
 
 const AskGPT = () => {

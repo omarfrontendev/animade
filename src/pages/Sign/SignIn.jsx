@@ -6,8 +6,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/services/login";
 import styles from "./.module.scss";
 import { getUser } from "../../redux/services/getUser";
-import axios from "axios";
-import { toast } from "react-toastify";
+import api from "../../api";
+import {
+  // emailMsg,
+  emailValidation,
+  formValidation,
+  userNameMsg,
+  userNameValidation,
+} from "../../utils/validators";
+import { customAlert } from "../../utils/alert";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -37,44 +44,16 @@ const SignIn = () => {
     dispatch(getUser());
   };
 
-  let validate = true;
-
-  if (
-    data?.username &&
-    !data?.username.includes(" ") &&
-    /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
-      data?.password
-    )
-  ) {
-    validate = false;
-  }
-
   const sendEmail = async () => {
     setloading(true);
     try {
-      await axios.post(
-        `${process.env.REACT_APP_SERVER_API_URL}/password_reset/`,
-        {
-          email,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      await api.post("/password_reset/", { email });
       setloading(false);
-      toast.success("check Your Email !", {
-        position: toast.POSITION.TOP_RIGHT,
-        className: "toast__fiy",
-      });
+      customAlert("check Your Email !", "success");
       navigate("/reset__password");
     } catch (error) {
       setloading(false);
-      toast.error(error?.response?.data?.email[0], {
-        position: toast.POSITION.TOP_RIGHT,
-        className: "toast__fiy",
-      });
+      customAlert(error?.response?.data?.email[0], "error");
     }
   };
 
@@ -94,26 +73,30 @@ const SignIn = () => {
               <div className={styles.inputs__group}>
                 <Input
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="Full Name"
                   onChange={(e) => inputChangeHandler(e, "username")}
                   error={error?.response?.data?.username}
-                  value={data.username || ""}
-                  validation={(e) => e && !e.includes(" ")}
-                  errorMsg={`This Field Can't Be Empty, Not Contain a Space " " !`}
+                  validation={(e) => userNameValidation(e)}
+                  errorMsg={userNameMsg}
                   required={true}
+                  value={data?.username || ""}
                 />
+                {/* <Input
+                  placeholder="Your Email"
+                  type="email"
+                  onChange={(e) => inputChangeHandler(e, "email")}
+                  error={error?.response?.data?.email}
+                  validation={(e) => emailValidation(e)}
+                  errorMsg={emailMsg}
+                  required={true}
+                  value={data?.email || ""}
+                /> */}
                 <Input
                   placeholder="Password"
                   type="password"
                   onChange={(e) => inputChangeHandler(e, "password")}
                   value={data.password || ""}
                   error={error?.response?.data?.password}
-                  validation={(e) =>
-                    /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
-                      e
-                    )
-                  }
-                  errorMsg="password should contain atleast one number, letter, one special character [@$!%*?&]"
                   required={true}
                 />
               </div>
@@ -129,7 +112,14 @@ const SignIn = () => {
                 className={`${styles.login__btn} ${
                   isLoaing ? styles.loading : ""
                 }`}
-                disabled={isLoaing || validate}
+                disabled={
+                  isLoaing ||
+                  !formValidation(
+                    // emailValidation(data?.email),
+                    userNameValidation(data?.username),
+                    data.password
+                  )
+                }
               >
                 {isLoaing ? (
                   <span className={styles.loader}></span>
@@ -154,7 +144,7 @@ const SignIn = () => {
       {openPopup && (
         <Modal
           setState={setOpenPopup}
-          title="Name your Drop"
+          title="What is the email associated with your account"
           buttons={
             <div className={styles.btns}>
               <Button
@@ -166,10 +156,7 @@ const SignIn = () => {
               </Button>
               <Button
                 type="button"
-                disabled={
-                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email) ||
-                  loading
-                }
+                disabled={!emailValidation(email) || loading}
                 loading={loading}
                 onClick={sendEmail}
               >

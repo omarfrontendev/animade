@@ -5,7 +5,7 @@ import { Button } from "../";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/services/logout";
-import { toast } from "react-toastify";
+import { customAlert } from "../../utils/alert";
 import styles from "./.module.scss";
 
 const Header = () => {
@@ -35,15 +35,9 @@ const Header = () => {
                   onClick={async () =>
                     await dispatch(logout()).then((res) => {
                       if (!res?.error) {
-                        toast.success("Success Logout!", {
-                          position: toast.POSITION.BOTTOM_RIGHT,
-                          className: "toast__fiy",
-                        });
+                        customAlert("Success Logout!", "success");
                       } else {
-                        toast.error(res?.error.message, {
-                          position: toast.POSITION.BOTTOM_RIGHT,
-                          className: "toast__fiy",
-                        });
+                        customAlert(res?.error?.message, "error");
                       }
                     })
                   }

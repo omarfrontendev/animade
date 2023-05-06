@@ -152,6 +152,10 @@ body {
 }
 .toast__fiy {
   font-size: 14px;
+  text-transform: capitalize;
+}
+.Toastify__toast-container {
+  z-index: 1000000000000000000;
 }
 .spinner {
   width: 25px;

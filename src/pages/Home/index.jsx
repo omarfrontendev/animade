@@ -9,18 +9,16 @@ import {
   Potential,
 } from "../../components";
 
-const Home = () => {
-  return (
-    <>
-      <Hero />
-      <Banner />
-      <HowWorks />
-      <Potential />
-      <Fees />
-      <Mission />
-      <ContactUs />
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <Hero />
+    <Banner />
+    <HowWorks />
+    <Potential />
+    <Fees />
+    <Mission />
+    <ContactUs />
+  </>
+);
 
 export default Home;

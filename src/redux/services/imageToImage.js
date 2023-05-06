@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import config from "../../config";
 
 export const imageToImage = createAsyncThunk(
   "AIResults/imageToImage",
@@ -7,7 +8,7 @@ export const imageToImage = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const jsone = JSON.stringify({
-        key: "kj36kb5bvU5gR8liQoTHe4T1IBHentRZYqqwuVb0cEozZPb3fiUM51jjVaCp",
+        key: `${config.STABLE_KEY}`,
         prompt: data.prompt,
         negative_prompt: null,
         init_image: data.init_image,
@@ -24,16 +25,12 @@ export const imageToImage = createAsyncThunk(
         track_id: null,
       });
 
-      const res = await axios.post(
-        "https://stablediffusionapi.com/api/v3/img2img",
-        jsone,
-        {
-          headers: {
-            // Overwrite Axios's automatically set Content-Type
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const res = await axios.post(`${config.STABLE_URL}/v3/img2img`, jsone, {
+        headers: {
+          // Overwrite Axios's automatically set Content-Type
+          "Content-Type": "application/json",
+        },
+      });
       return res.data;
     } catch (error) {
       return rejectWithValue(error);
