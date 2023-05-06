@@ -4,9 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { HeaderSettings, PlatFormCard } from "../../components";
 import { IoIosArrowBack } from "react-icons/io";
 import titleClasses from "../Settings/.module.scss";
-import styles from "../ChoosePlatform/.module.scss";
 import axios from "axios";
-// import axios from "axios";
+import styles from "../ChoosePlatform/.module.scss";
 
 const ManageAccount = () => {
   const title = (
@@ -20,25 +19,35 @@ const ManageAccount = () => {
 
   const location = useLocation();
 
-  const clientId = "app-5707550";
-  const clientSecret =
-    "f0jTU4DJL8jI3Cda9TWVN0QFPNfLL0h9mkK4gdutRJK2ymbIoThft9CzWWy25BTK";
+  const clientId = process.env.REACT_APP_PRINTFUL__CLIENT__ID;
+  const clientSecret = process.env.REACT_APP_PRINTFUL__SECRET__ID;
 
+  // ==== get token ======
   const token = location.search.slice(
     location.search.indexOf("=", 7) + 1,
     location.search.indexOf("&", 10)
   );
 
+  console.log(token);
+  console.log(clientId);
+  console.log(clientSecret);
+
+  // ==== get access token ======
   const getAccessToken = async () => {
-    const res = await axios.post("https://www.printful.com/oauth/token", {
-      grant_type: "authorization_code",
-      client_id: clientId,
-      client_secret: clientSecret,
-      code: token,
-    });
-    console.log(res);
+    try {
+      const res = await axios.post("https://www.printful.com/oauth/token", {
+        grant_type: "authorization_code",
+        client_id: clientId,
+        client_secret: clientSecret,
+        code: token,
+      });
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
+  // ==== get products ======
   // useEffect(() => {
   //   const getProducts = async () => {
   //     try {
@@ -56,6 +65,8 @@ const ManageAccount = () => {
   //     getProducts();
   //   }
   // }, [token]);
+
+  // ==== add product ======
 
   // const addProductToPrintFul = async () => {
   //   try {
