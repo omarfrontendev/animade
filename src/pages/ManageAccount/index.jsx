@@ -33,11 +33,11 @@ const ManageAccount = () => {
   console.log(clientId);
   console.log(clientSecret);
 
-  // ==== get access token ======
+  // ==== get access token ====== done
   const getAccessToken = async () => {
     try {
       const { data } = await axios.post(
-        "https://www.printful.com/oauth/token",
+        `${process.env.REACT_APP_PRINTFUL__API__URL}/oauth/token`,
         {
           grant_type: "authorization_code",
           client_id: clientId,
@@ -52,14 +52,17 @@ const ManageAccount = () => {
     }
   };
 
-  // ==== get products ======
+  // ==== get products ====== done
   const getProducts = async () => {
     try {
-      const res = await axios.get("https://api.printful.com/store/products", {
-        headers: {
-          Authorization: `Bearer ${data.access_token}`,
-        },
-      });
+      const res = await axios.get(
+        `${process.env.REACT_APP_PRINTFUL__API__URL}/store/products`,
+        {
+          headers: {
+            Authorization: `Bearer ${data.access_token}`,
+          },
+        }
+      );
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -70,25 +73,46 @@ const ManageAccount = () => {
   const addProductToPrintFul = async () => {
     try {
       const res = await axios.post(
-        "https://api.printful.com/store/products",
-        {
-          sync_product: {
-            name: "Framed Landscape Poster",
-          },
-          sync_variants: {
-            variant_id: 10760,
-            files: [
-              {
-                url: "http://example.com/files/posters/poster_1.jpg",
-              },
-            ],
-          },
-        },
+        `${process.env.REACT_APP_PRINTFUL__API__URL}/store/products`,
         {
           headers: {
             Authorization: `Bearer ${data.access_token}`,
             "Content-Type": "application/json",
           },
+        },
+        {
+          sync_product: {
+            name: "T-Shirt",
+            thumbnail: "https://picsum.photos/200/300",
+          },
+          sync_variants: [
+            {
+              retail_price: 21.0,
+              variant_id: 4011,
+              files: [
+                {
+                  url: "https://picsum.photos/200/300?image=1",
+                },
+                {
+                  type: "back",
+                  url: "https://picsum.photos/200/300?image=1",
+                },
+              ],
+            },
+            {
+              retail_price: 21.0,
+              variant_id: 4012,
+              files: [
+                {
+                  url: "https://picsum.photos/200/300?image=1",
+                },
+                {
+                  type: "back",
+                  url: "https://picsum.photos/200/300?image=1",
+                },
+              ],
+            },
+          ],
         }
       );
       console.log(res);
