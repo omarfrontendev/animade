@@ -104,7 +104,7 @@ const ManageAccount = () => {
         <div className={styles.platform__header}>
           <h5 className={styles.platform__title}>OpenSea - NFT</h5>
           <a
-            href={`https://www.printful.com/oauth/authorize?client_id=app-5936708&redirect_url=https://animade.vercel.app/settings/manage-account`}
+            href={`https://www.printful.com/oauth/authorize?client_id=${clientId}&redirect_url=https://animade.vercel.app/settings/manage-account`}
             target="_blank"
             className={styles.add__new}
             rel="noreferrer"
