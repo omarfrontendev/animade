@@ -34,7 +34,15 @@
     }
   }
 }
-
+.main__loader__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100px !important;
+  height: 100px !important;
+  border-width: 9px !important;
+}
 @media (max-width: 1399px) {
   .page {
     .platform__section {

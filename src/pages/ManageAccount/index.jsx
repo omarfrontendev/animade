@@ -1,27 +1,26 @@
-import React, { useState } from "react"; // useEffect
+import React, { useEffect, useState } from "react"; // useEffect
 import { IoIosAdd } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 import { HeaderSettings, PlatFormCard } from "../../components";
 import { IoIosArrowBack } from "react-icons/io";
 import titleClasses from "../Settings/.module.scss";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { printfulAuth } from "../../redux/services/printfulAuth";
+import { getPrintfulproduct } from "../../redux/services/getPrintfulProducts";
 import styles from "../ChoosePlatform/.module.scss";
+import { customAlert } from "../../utils/alert";
+import axios from "axios";
 
 const ManageAccount = () => {
-  const [data, setData] = useState({});
-  const title = (
-    <h5 className={titleClasses.title__header}>
-      <span>
-        <Link to="/settings">Settings</Link>
-      </span>
-      <IoIosArrowBack /> Manage Accounts
-    </h5>
-  );
-
   const location = useLocation();
+  const dispatch = useDispatch();
+  const { access_token, products, error, loadind } = useSelector(
+    (state) => state.printful
+  );
+  const [isLoading, setisLoading] = useState(false);
+  const [isError, setisError] = useState(false);
 
   const clientId = process.env.REACT_APP_PRINTFUL__CLIENT__ID;
-  const clientSecret = process.env.REACT_APP_PRINTFUL__SECRET__ID;
 
   // ==== get token ======
   const token = location.search.slice(
@@ -29,48 +28,22 @@ const ManageAccount = () => {
     location.search.indexOf("&", 10)
   );
 
-  console.log(token);
-  console.log(clientId);
-  console.log(clientSecret);
-
-  // ==== get access token ====== done
-  const getAccessToken = async () => {
-    try {
-      const { data } = await axios.post(
-        `https://www.printful.com/oauth/token`,
-        {
-          grant_type: "authorization_code",
-          client_id: clientId,
-          client_secret: clientSecret,
-          code: token,
-        }
-      );
-      setData(data);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    if (token && !access_token) {
+      dispatch(printfulAuth(token));
     }
-  };
+  }, [access_token, dispatch, token]);
 
-  // ==== get products ====== done
-  const getProducts = async () => {
-    try {
-      const res = await axios.get(
-        `${process.env.REACT_APP_PRINTFUL__API__URL}/store/products`,
-        {
-          headers: {
-            Authorization: `Bearer ${data.access_token}`,
-          },
-        }
-      );
-      console.log(res);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    if (access_token && token) {
+      dispatch(getPrintfulproduct());
     }
-  };
+  }, [access_token, dispatch, token]);
 
   // ==== add product ====== //#//
   const addProductToPrintFul = async () => {
+    setisLoading(true);
+    setisError(false);
     try {
       const res = await axios.post(
         `${process.env.REACT_APP_PRINTFUL__API__URL}/store/products`,
@@ -110,15 +83,32 @@ const ManageAccount = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${data.access_token}`,
+            Authorization: `Bearer ${access_token}`,
           },
         }
       );
-      console.log(res);
+      setisLoading(false);
+      setisError(false);
+      customAlert("You Add A Product !", "success");
+      dispatch(getPrintfulproduct());
     } catch (error) {
-      console.log(error);
+      setisLoading(false);
+      setisError(error);
+      customAlert("Some thing wrong !", "error");
     }
   };
+
+  const title = (
+    <h5 className={titleClasses.title__header}>
+      <span>
+        <Link to="/settings">Settings</Link>
+      </span>
+      <IoIosArrowBack /> Manage Accounts
+    </h5>
+  );
+
+  if (loadind)
+    return <span className={`spinner ${styles.main__loader__spinner}`}></span>;
 
   return (
     <div className={styles.page}>
@@ -126,21 +116,11 @@ const ManageAccount = () => {
       <div className={styles.platform__section}>
         <div className={styles.platform__header}>
           <h5 className={styles.platform__title}>OpenSea - NFT</h5>
-          <a
-            href={`https://www.printful.com/oauth/authorize?client_id=${clientId}&redirect_url=https://animade.vercel.app/settings/manage-account`}
-            target="_blank"
-            className={styles.add__new}
-            rel="noreferrer"
-          >
+          <Link to="/" className={styles.add__new}>
             <IoIosAdd className={styles.icon} />
             Link New Account
-          </a>
+          </Link>
         </div>
-        <button onClick={() => getAccessToken()}>Get Access Token</button>
-        <br />
-        <button onClick={() => getProducts()}>Get Products</button>
-        <br />
-        <button onClick={() => addProductToPrintFul()}>Add Product</button>
         <div className={styles.platform__list}>
           {new Array(3).fill("").map((_, i) => (
             <PlatFormCard key={i} type="OpenSea" />
@@ -152,16 +132,53 @@ const ManageAccount = () => {
           <h5 className={styles.platform__title}>
             Printful Store - Print On Demand
           </h5>
-          <Link to="/" className={styles.add__new}>
-            <IoIosAdd className={styles.icon} />
-            Link New Account
-          </Link>
+          {!access_token && (
+            <a
+              href={`https://www.printful.com/oauth/authorize?client_id=${clientId}&redirect_url=https://animade.vercel.app/settings/manage-account`}
+              target="_blank"
+              className={styles.add__new}
+              rel="noreferrer"
+            >
+              <IoIosAdd className={styles.icon} />
+              Link New Account
+            </a>
+          )}
         </div>
-        <div className={styles.platform__list}>
-          {new Array(3).fill("").map((_, i) => (
-            <PlatFormCard key={i} type="Printful" />
-          ))}
-        </div>
+        {error?.message && (
+          <p className="error__msg">{error?.message || "ERROR"}</p>
+        )}
+        {error?.response?.data?.result && (
+          <p className="error__msg">{error?.response.data.result || "ERROR"}</p>
+        )}
+        {loadind && <span className={`spinner`}></span>}
+        {!products?.length && access_token ? <p>No Products yet!</p> : ""}
+        {!access_token ? <p>You New A New Account !</p> : ""}
+        {products?.length ? (
+          <div className={styles.platform__list}>
+            {new Array(3).fill("").map((_, i) => (
+              <PlatFormCard key={i} type="Printful" />
+            ))}
+          </div>
+        ) : (
+          ""
+        )}
+        {access_token ? (
+          <button
+            style={{
+              border: "2px solid #FFF",
+              color: "#FFF",
+              padding: "10px 24px",
+              margin: "20px 0",
+              borderRadius: "8px",
+            }}
+            onClick={() => addProductToPrintFul()}
+            disabled={isLoading}
+          >
+            {isLoading ? <span className={`spinner`}></span> : "Add Product +"}
+          </button>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

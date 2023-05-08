@@ -14,9 +14,7 @@ import { aiModels } from "../../redux/services/aiModels";
 const AskGPT = () => {
   const [data, setData] = useState({});
   const dispatch = useDispatch();
-  const { askAiImages, error, isLoading, models } = useSelector(
-    (state) => state.AIResults
-  );
+  const { error, isLoading, models } = useSelector((state) => state.AIResults);
 
   return (
     <>
